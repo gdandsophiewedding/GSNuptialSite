@@ -79,7 +79,13 @@ p{margin:0}
 .btn:hover{background:var(--thread);color:var(--wine)}
 .btn.solid{background:var(--burgundy);border-color:var(--burgundy)}
 .btn.solid:hover{background:var(--wine);color:var(--print)}
+.nav-cta{display:flex;gap:8px;align-items:center}
+.btn.ghost{border-color:rgba(198,164,100,.45)}
 @media (max-width:860px){.nav ul{display:none}}
+@media (max-width:420px){.nav .btn{padding:10px 15px;letter-spacing:.14em}}
+section[id],header[id]{scroll-margin-top:76px}
+.cinema-head h2,.details-head h2,.attire h2,.gifts h2,.gallery-head h2{margin-top:12px}
+@media (max-width:700px){.cinema,.details,.attire,.gifts,.gallery{padding-top:112px}}
 
 /* ---------- hero ---------- */
 .hero{position:relative;min-height:min(94svh,940px);display:grid;align-items:end;color:var(--print);background:var(--wine);overflow:hidden;isolation:isolate}
@@ -91,6 +97,7 @@ p{margin:0}
 .hero .eyebrow{color:var(--thread);margin-bottom:18px}
 .names{font-size:clamp(76px,15.5vw,212px);font-style:italic;line-height:.86;letter-spacing:-.025em}
 .names .amp{font-style:normal;color:var(--thread);font-size:.55em;vertical-align:.32em;margin:0 .08em}
+.fullnames span{display:block}
 .fullnames{margin-top:22px;font:400 13px/1.7 var(--mono);letter-spacing:.14em;text-transform:uppercase;opacity:.86}
 .date-line{margin-top:26px;display:flex;flex-wrap:wrap;gap:10px 22px;align-items:center;font:400 clamp(20px,2.4vw,28px)/1.2 var(--display)}
 .date-line i{color:var(--thread)}
@@ -287,7 +294,7 @@ p{margin:0}
 .tile:hover span,.tile:focus-visible span{opacity:1}
 
 /* credits */
-.credits{background:var(--wine);color:var(--print);padding-block:0 clamp(70px,9vw,110px);position:relative;overflow:hidden}
+.credits{background:var(--wine);color:var(--print);padding-block:0 clamp(24px,3vw,40px);position:relative;overflow:hidden}
 .credits .slate{height:26px;background:repeating-linear-gradient(-45deg,var(--print) 0 22px,#14060a 22px 44px);margin-bottom:clamp(60px,8vw,96px)}
 .credits .eyebrow{color:var(--thread);text-align:center}
 .credits h2{text-align:center;margin-top:12px;font-size:clamp(40px,6.5vw,80px)}
@@ -352,6 +359,16 @@ input:focus,select:focus,textarea:focus{outline:none;border-color:var(--burgundy
 .guest{background:var(--print);border:1px solid rgba(198,164,100,.6);padding:16px 18px;display:grid;gap:14px}
 .guest-h{font:italic 400 20px var(--display);color:var(--burgundy)}
 .kidnote{font-size:14px;color:var(--olive);background:rgba(164,174,142,.18);padding:10px 12px}
+.upload{position:relative;display:flex;align-items:center;gap:12px;flex-wrap:wrap;border:1px dashed rgba(43,21,25,.35);background:var(--print);padding:12px 14px;cursor:pointer;font:400 15px var(--body);text-transform:none;letter-spacing:0;color:var(--ink-soft)}
+.upload:hover{border-color:var(--burgundy)}
+.upload input{position:absolute;opacity:0;width:1px;height:1px;pointer-events:none}
+.upload:focus-within{outline:2px solid var(--thread);outline-offset:2px}
+.up-btn{font:500 11px var(--mono);letter-spacing:.16em;text-transform:uppercase;padding:9px 14px;border-radius:999px;background:var(--burgundy);color:var(--print);flex:none}
+.up-name{min-width:0;flex:1 1 110px}
+.upload.done .up-name{color:var(--olive);font-weight:600}
+.up-thumb{width:64px;height:44px;object-fit:cover;border:1px solid rgba(43,21,25,.2)}
+.upload.done{border-style:solid;border-color:var(--olive)}
+.upload.done .up-btn{background:var(--olive)}
 .check{display:flex;gap:12px;align-items:flex-start;font:400 15px var(--body);text-transform:none;letter-spacing:0;color:var(--ink-soft);cursor:pointer}
 .check input{width:18px;height:18px;flex:none;margin-top:3px;accent-color:var(--burgundy)}
 .submit-row{display:flex;justify-content:space-between;align-items:center;gap:16px;flex-wrap:wrap}
@@ -378,7 +395,7 @@ input:focus,select:focus,textarea:focus{outline:none;border-color:var(--burgundy
 .bank span{font:500 11px var(--mono);letter-spacing:.14em;text-transform:uppercase;color:var(--ink-soft)}
 .gifts p.howto{font-size:15px;margin-top:30px;max-width:52ch}
 @media (max-width:520px){.banks{grid-template-columns:minmax(0,300px)}}
-footer{background:var(--wine);color:#d9c9ae;padding-block:70px calc(40px + env(safe-area-inset-bottom,0px));text-align:center}
+footer{background:var(--wine);color:#d9c9ae;padding-block:28px calc(40px + env(safe-area-inset-bottom,0px));text-align:center}
 footer .foot-logo{width:120px;height:auto;margin:0 auto 26px}
 footer .big{font:italic 400 clamp(46px,10vw,130px)/.9 var(--display);color:var(--print)}
 footer .big span{color:var(--thread);font-style:normal;font-size:.55em;vertical-align:.3em}
@@ -401,7 +418,7 @@ footer p.meta{margin-top:18px;font:400 12px var(--mono);letter-spacing:.2em;text
     <li><a href="#attire">Attire</a></li>
     <li><a href="#gallery">Gallery</a></li>
   </ul>
-  <a class="btn" href="#rsvp">RSVP</a>
+  <div class="nav-cta"><a class="btn ghost" href="#gifts">Gifts</a><a class="btn" href="#rsvp">RSVP</a></div>
 </nav>
 
 <header class="hero" id="top">
@@ -413,7 +430,7 @@ footer p.meta{margin-top:18px;font:400 12px var(--mono);letter-spacing:.2em;text
       <div>
         <p class="eyebrow">Together with our families · We are getting married</p>
         <h1 class="names">GD<span class="amp">&amp;</span>Sophie</h1>
-        <p class="fullnames">Guillermo E. Domondon II &nbsp;·&nbsp; Sophia Alessandra D. Minglana</p>
+        <p class="fullnames"><span>Guillermo Esperon Domondon II</span><span>Sophia Alessandra Dacumos Minglana</span></p>
         <p class="date-line"><span>Saturday</span><i>◆</i><span>26 December 2026</span><i>◆</i><span>Parañaque &amp; Taguig</span></p>
       </div>
       <button class="seal" id="seal" type="button" aria-label="Play our film with sound">
@@ -675,6 +692,7 @@ footer p.meta{margin-top:18px;font:400 12px var(--mono);letter-spacing:.2em;text
                 <option>PRC ID</option><option>Postal ID</option><option>Voter’s ID</option><option>Other government ID</option>
               </select></div>
             <div class="field"><label for="f-idno">ID number</label><input id="f-idno" name="idNumber" required autocomplete="off" placeholder="As printed on the card"></div>
+            <div class="field full"><span class="legend">Photo of your ID (front)</span><label class="upload" for="f-idphoto"><input type="file" id="f-idphoto" accept="image/*"><span class="up-btn">Choose photo</span><span class="up-name">No photo yet</span><img class="up-thumb" alt="" hidden></label></div>
           </div>
           <div class="plusbox">
             <div class="field"><label for="f-pluscount">How many plus-ones?</label>
@@ -871,28 +889,41 @@ if(Date.now()>RSVP_CLOSES){document.getElementById("rsvpForm").hidden=true; docu
 const form=document.getElementById("rsvpForm"), idbox=document.getElementById("idbox"), err=document.getElementById("err");
 const plusCount=document.getElementById("f-pluscount"), plusList=document.getElementById("plusList"), plusConfirmWrap=document.getElementById("plusConfirmWrap");
 const ID_OPTIONS='<option value="">Choose an ID</option><option>PhilSys National ID</option><option>Driver’s License</option><option>Passport</option><option>UMID / SSS</option><option>PRC ID</option><option>Postal ID</option><option>Voter’s ID</option><option>Other government ID</option>';
+function bindUpload(label){
+  const inp=label.querySelector("input"), nm=label.querySelector(".up-name"), th=label.querySelector(".up-thumb");
+  inp.addEventListener("change",()=>{const f=inp.files[0];
+    if(!f){nm.textContent="No photo yet"; label.querySelector(".up-btn").textContent="Choose photo";th.hidden=true;label.classList.remove("done");return;}
+    nm.textContent="Photo added ✓"; label.querySelector(".up-btn").textContent="Change photo"; label.classList.add("done"); th.src=URL.createObjectURL(f); th.hidden=false; th.onerror=()=>{th.hidden=true;};});
+}
+bindUpload(document.querySelector('label[for="f-idphoto"]'));
 function renderPlus(){
-  const n=+plusCount.value, keep=[...plusList.querySelectorAll(".guest")].map(g=>({
-    name:g.querySelector("[data-k=name]").value,type:g.querySelector("[data-k=type]").value,no:g.querySelector("[data-k=no]").value,kid:g.querySelector("[data-k=kid]").checked}));
-  plusConfirmWrap.hidden=n===0; plusList.innerHTML="";
-  for(let i=0;i<n;i++){
-    const k=keep[i]||{name:"",type:"",no:"",kid:false}, g=document.createElement("div"); g.className="guest";
+  const n=+plusCount.value; plusConfirmWrap.hidden=n===0;
+  let have=plusList.querySelectorAll(".guest").length;
+  while(have>n){plusList.lastElementChild.remove(); have--;}
+  for(let i=have;i<n;i++){
+    const g=document.createElement("div"); g.className="guest";
     g.innerHTML=`<p class="guest-h">Plus-one ${i+1}</p>
       <div class="fields">
         <div class="field full"><label for="pg${i}-name">Full name, as on their ID</label><input id="pg${i}-name" data-k="name" autocomplete="off"></div>
         <div class="field"><label for="pg${i}-type">Government ID</label><select id="pg${i}-type" data-k="type">${ID_OPTIONS}</select></div>
         <div class="field"><label for="pg${i}-no">ID number</label><input id="pg${i}-no" data-k="no" autocomplete="off"></div>
+        <div class="field full"><span class="legend">Photo of their ID (front)</span><label class="upload" for="pg${i}-photo"><input type="file" id="pg${i}-photo" accept="image/*" data-k="photo"><span class="up-btn">Choose photo</span><span class="up-name">No photo yet</span><img class="up-thumb" alt="" hidden></label></div>
       </div>
       <label class="check"><input type="checkbox" id="pg${i}-kid" data-k="kid"> This is a toddler or child with no ID yet</label>
       <p class="kidnote" hidden>No ID needed here. Please message GD &amp; Sophie so we can let the Navy gate know.</p>`;
-    plusList.appendChild(g);
-    g.querySelector("[data-k=name]").value=k.name; g.querySelector("[data-k=type]").value=k.type; g.querySelector("[data-k=no]").value=k.no;
-    const kid=g.querySelector("[data-k=kid]"); kid.checked=k.kid;
-    const sync=()=>{g.querySelector(".kidnote").hidden=!kid.checked; g.querySelectorAll("[data-k=type],[data-k=no]").forEach(x=>{x.disabled=kid.checked; x.closest(".field").style.opacity=kid.checked?.4:1;});};
+    plusList.appendChild(g); bindUpload(g.querySelector(".upload"));
+    const kid=g.querySelector("[data-k=kid]");
+    const sync=()=>{g.querySelector(".kidnote").hidden=!kid.checked; g.querySelectorAll("[data-k=type],[data-k=no],[data-k=photo]").forEach(x=>{x.disabled=kid.checked; x.closest(".field").style.opacity=kid.checked?.4:1;});};
     kid.addEventListener("change",sync); sync();
   }
 }
 plusCount.addEventListener("change",renderPlus);
+// shrink a photo on the guest's phone before sending (max 1600px JPEG)
+function shrink(file){return new Promise((res,rej)=>{const url=URL.createObjectURL(file), img=new Image();
+  img.onload=()=>{const k=Math.min(1,1600/Math.max(img.naturalWidth,img.naturalHeight)), c=document.createElement("canvas");
+    c.width=Math.round(img.naturalWidth*k); c.height=Math.round(img.naturalHeight*k); c.getContext("2d").drawImage(img,0,0,c.width,c.height);
+    URL.revokeObjectURL(url); res(c.toDataURL("image/jpeg",0.82));};
+  img.onerror=()=>rej(new Error("unreadable")); img.src=url;});}
 form.querySelectorAll('input[name="attending"]').forEach(r=>r.addEventListener("change",()=>{
   const yes=form.attending.value==="yes"; idbox.hidden=!yes; document.getElementById("dietWrap").hidden=!yes;
 }));
@@ -900,19 +931,27 @@ form.addEventListener("submit",async e=>{
   e.preventDefault(); err.hidden=true;
   const fd=Object.fromEntries(new FormData(form).entries()); const yes=fd.attending==="yes";
   const need=[["name","your full name"],["mobile","your mobile number"]];
-  if(yes){need.push(["idType","your ID type"],["idNumber","your ID number"]);
+  const mainFile=document.getElementById("f-idphoto").files[0];
+  if(yes){need.push(["idType","your ID type"],["idNumber","your ID number"],["_photo","a photo of your ID"]); fd._photo=mainFile?"y":"";
     }
-  const plusOnes=yes?[...plusList.querySelectorAll(".guest")].map((g,i)=>({n:i+1,name:g.querySelector("[data-k=name]").value.trim(),idType:g.querySelector("[data-k=type]").value,idNumber:g.querySelector("[data-k=no]").value.trim(),childNoId:g.querySelector("[data-k=kid]").checked})):[];
+  const plusOnes=yes?[...plusList.querySelectorAll(".guest")].map((g,i)=>({n:i+1,name:g.querySelector("[data-k=name]").value.trim(),idType:g.querySelector("[data-k=type]").value,idNumber:g.querySelector("[data-k=no]").value.trim(),childNoId:g.querySelector("[data-k=kid]").checked,_file:g.querySelector("[data-k=photo]").files[0]})):[];
   plusOnes.forEach(p=>{need.push(["_p"+p.n+"n","plus-one "+p.n+"’s full name"]); fd["_p"+p.n+"n"]=p.name;
-    if(!p.childNoId){need.push(["_p"+p.n+"t","plus-one "+p.n+"’s ID type"],["_p"+p.n+"i","plus-one "+p.n+"’s ID number"]); fd["_p"+p.n+"t"]=p.idType; fd["_p"+p.n+"i"]=p.idNumber;}});
+    if(!p.childNoId){need.push(["_p"+p.n+"t","plus-one "+p.n+"’s ID type"],["_p"+p.n+"i","plus-one "+p.n+"’s ID number"],["_p"+p.n+"f","a photo of plus-one "+p.n+"’s ID"]); fd["_p"+p.n+"t"]=p.idType; fd["_p"+p.n+"i"]=p.idNumber; fd["_p"+p.n+"f"]=p._file?"y":"";}});
   const miss=need.filter(([k])=>!(fd[k]||"").trim()).map(([,l])=>l);
-  Object.keys(fd).filter(k=>k.startsWith("_p")).forEach(k=>delete fd[k]);
+  Object.keys(fd).filter(k=>k.startsWith("_p")).forEach(k=>delete fd[k]); delete fd._photo;
   if(miss.length){err.textContent="Please add "+miss.join(", ")+"."; err.hidden=false; return;}
   if(plusOnes.length&&!document.getElementById("f-plusconfirm").checked){err.textContent="Please confirm your plus-one(s) with GD & Sophie first, then tick the box."; err.hidden=false; return;}
+  const btn=document.getElementById("submitBtn");
+  if(yes){ btn.disabled=true; btn.textContent="Preparing photos…";
+    try{ fd.idPhoto=await shrink(mainFile);
+      for(const p of plusOnes){ if(!p.childNoId&&p._file) p.idPhoto=await shrink(p._file); } }
+    catch(_){btn.disabled=false; btn.textContent="Send my reply"; err.textContent="One of the ID photos couldn’t be read. Please choose a JPG or PNG photo and try again."; err.hidden=false; return;} }
+  plusOnes.forEach(p=>delete p._file);
+  btn.disabled=false; btn.textContent="Send my reply";
   fd.plusOneCount=yes?plusOnes.length:0; fd.plusOnes=JSON.stringify(plusOnes); fd.childrenWithoutId=plusOnes.filter(p=>p.childNoId).map(p=>p.name).join(", ");
   if(yes&&!document.getElementById("f-consent").checked){err.textContent="Please tick the box to let us share your ID with the Navy gate. They won’t let anyone in without it."; err.hidden=false; return;}
   fd.submittedAt=new Date().toISOString();
-  const btn=document.getElementById("submitBtn"); btn.disabled=true; btn.textContent="Sending…";
+  btn.disabled=true; btn.textContent="Sending…";
   let saved=false;
   if(RSVP_ENDPOINT){
     try{await fetch(RSVP_ENDPOINT,{method:"POST",mode:"no-cors",headers:{"Content-Type":"text/plain;charset=utf-8"},body:JSON.stringify(fd)}); saved=true;}
