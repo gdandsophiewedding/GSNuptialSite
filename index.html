@@ -553,7 +553,7 @@ footer .big span{font-family:var(--script)}
   section[id],header[id],main[id]{scroll-margin-top:64px}
 
   /* gentle fade-up as sections arrive */
-  .rv{opacity:0;transform:translateY(26px);transition:opacity .9s ease,transform .9s cubic-bezier(.2,.7,.2,1)}
+  .rv{transform:translateY(22px);transition:transform .9s cubic-bezier(.2,.7,.2,1)}
   .rv.in{opacity:1;transform:none}
 }
 @media (max-width:700px) and (prefers-reduced-motion:reduce){.rv{opacity:1;transform:none}.cover.open{transition:none}}
@@ -613,6 +613,39 @@ footer .big span{font-family:var(--script)}
 }
 
 .gallery-head{max-width:980px;margin-left:auto;margin-right:auto}
+
+/* ===== polaroids everywhere ===== */
+.runner .pair figure{background:var(--print);padding:7px 7px 26px;box-shadow:0 1px 1px rgba(43,21,25,.08),0 16px 32px -14px rgba(43,21,25,.45);transition:transform .4s}
+.runner .pair figure:nth-child(1){transform:rotate(-3deg)}
+.runner .pair figure:nth-child(2){transform:rotate(2.5deg) translateY(10px)}
+.runner .pair figure:hover{transform:rotate(0) scale(1.03)}
+.look .ph{aspect-ratio:auto;overflow:visible;background:var(--print);padding:10px 10px 40px;box-shadow:0 1px 1px rgba(43,21,25,.08),0 22px 44px -18px rgba(43,21,25,.5);transition:transform .5s}
+.look .ph::after{display:none}
+.look .ph img{aspect-ratio:3/4;height:auto;display:block}
+.look:hover img{transform:none}
+.look:nth-child(1) .ph{transform:rotate(-2.5deg)}
+.look:nth-child(2) .ph{transform:rotate(2deg)}
+.look .ph:hover{transform:rotate(0) scale(1.02)}
+.masonry{gap:16px 12px}
+.masonry .tile{aspect-ratio:auto;overflow:visible;background:var(--print);padding:6px 6px 20px;box-shadow:0 1px 1px rgba(43,21,25,.08),0 10px 20px -10px rgba(43,21,25,.45);transition:transform .35s}
+.masonry .tile img{aspect-ratio:1;height:auto}
+.masonry .tile:hover img{transform:none}
+.masonry .tile:nth-child(4n+1){transform:rotate(-2deg)}
+.masonry .tile:nth-child(4n+2){transform:rotate(1.5deg)}
+.masonry .tile:nth-child(4n+3){transform:rotate(-1deg)}
+.masonry .tile:nth-child(4n){transform:rotate(2deg)}
+.masonry .tile:hover{transform:rotate(0) scale(1.06);z-index:2}
+@media (max-width:700px){
+  .masonry{gap:12px 8px}
+  .masonry .tile{padding:4px 4px 13px}
+  .look .ph{padding:6px 6px 26px}
+  .runner .pair{gap:12px;margin-top:12px}
+}
+
+.print figcaption .mark{font:400 13px var(--display);letter-spacing:.12em;color:var(--burgundy);flex:none;overflow:visible}
+.print figcaption .mark i{font-style:normal;color:#b5545f}
+.print figcaption{align-items:center;gap:10px}
+.print figcaption span{white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
 </style>
 </head>
 <body>
@@ -689,10 +722,10 @@ footer .big span{font-family:var(--script)}
       <p>We met through our jobs at Anytime Fitness: Sophie in Regional HR, GD in Learning &amp; Development and Support. Two very different departments, and somehow we kept ending up in the same pantry.</p>
     </div>
     <div class="prints">
-      <figure class="print tape" style="grid-column:1/8;grid-row:1/10;--r:-3deg;--ar:3/2" data-p="film-d7e29958"><img src="thumbs/film-d7e29958.jpg" alt="GD and Sophie making peace signs in the office" loading="lazy"><figcaption><span>▸ 01A</span><span>THE OFFICE</span></figcaption></figure>
-      <figure class="print" style="grid-column:7/13;grid-row:4/16;--r:4deg;--ar:7/10" data-p="film-1ae49048"><img src="thumbs/film-1ae49048.jpg" alt="GD and Sophie leaning on a table in front of the Our Culture wall" loading="lazy"><figcaption><span>▸ 02A</span><span>OUR CULTURE</span></figcaption></figure>
-      <figure class="print" style="grid-column:1/6;grid-row:10/20;--r:2deg;--ar:7/10;margin-top:18px" data-p="film-9eb7fe4a"><img src="thumbs/film-9eb7fe4a.jpg" alt="Sophie holding GD's face, both laughing in the pantry" loading="lazy"><figcaption><span>▸ 03A</span><span>PANTRY</span></figcaption></figure>
-      <figure class="print tape" style="grid-column:5/13;grid-row:16/23;--r:-2deg;--ar:10/7;margin-top:10px" data-p="film-b7f3128e"><img src="thumbs/film-b7f3128e.jpg" alt="GD and Sophie resting their chins on the pantry counter" loading="lazy"><figcaption><span>▸ 04A</span><span>BREAK TIME</span></figcaption></figure>
+      <figure class="print tape" style="grid-column:1/8;grid-row:1/10;--r:-3deg;--ar:3/2" data-p="film-d7e29958"><img src="thumbs/film-d7e29958.jpg" alt="GD and Sophie making peace signs in the office"><figcaption><span class="mark">G <i>♡</i> S</span><span>THE OFFICE</span></figcaption></figure>
+      <figure class="print" style="grid-column:7/13;grid-row:4/16;--r:4deg;--ar:7/10" data-p="film-1ae49048"><img src="thumbs/film-1ae49048.jpg" alt="GD and Sophie leaning on a table in front of the Our Culture wall"><figcaption><span class="mark">G <i>♡</i> S</span><span>OUR CULTURE</span></figcaption></figure>
+      <figure class="print" style="grid-column:1/6;grid-row:10/20;--r:2deg;--ar:7/10;margin-top:18px" data-p="film-9eb7fe4a"><img src="thumbs/film-9eb7fe4a.jpg" alt="Sophie holding GD's face, both laughing in the pantry"><figcaption><span class="mark">G <i>♡</i> S</span><span>PANTRY</span></figcaption></figure>
+      <figure class="print tape" style="grid-column:5/13;grid-row:16/23;--r:-2deg;--ar:10/7;margin-top:10px" data-p="film-b7f3128e"><img src="thumbs/film-b7f3128e.jpg" alt="GD and Sophie resting their chins on the pantry counter"><figcaption><span class="mark">G <i>♡</i> S</span><span>BREAK TIME</span></figcaption></figure>
     </div>
     <p class="swipe-hint" aria-hidden="true">Swipe for more →</p>
   </section>
@@ -707,17 +740,17 @@ footer .big span{font-family:var(--script)}
       <p class="eyebrow" style="color:#bfae98">Drag or swipe the roll →</p>
     </div>
     <div class="strip" id="strip" tabindex="0" aria-label="Film strip of city photos">
-      <figure class="frame" data-p="film-60f683ca"><img src="thumbs/film-60f683ca.jpg" alt="Crossing the street holding hands" loading="lazy"><figcaption>▸ 05</figcaption></figure>
-      <figure class="frame" data-p="p111"><img src="thumbs/p111.jpg" alt="Sophie looking back at the crosswalk" loading="lazy"><figcaption>▸ 06</figcaption></figure>
-      <figure class="frame" data-p="film-74469468"><img src="thumbs/film-74469468.jpg" alt="Waiting at a city corner" loading="lazy"><figcaption>▸ 07</figcaption></figure>
-      <figure class="frame" data-p="p113"><img src="thumbs/p113.jpg" alt="Walking on a rainy sidewalk, smiling back" loading="lazy"><figcaption>▸ 08</figcaption></figure>
-      <figure class="frame" data-p="film-1c2f546c"><img src="thumbs/film-1c2f546c.jpg" alt="GD kissing Sophie's forehead on the sidewalk" loading="lazy"><figcaption>▸ 09</figcaption></figure>
-      <figure class="frame" data-p="p114"><img src="thumbs/p114.jpg" alt="A rainy street walk in black and white" loading="lazy"><figcaption>▸ 10</figcaption></figure>
-      <figure class="frame" data-p="film-1e82bbaa"><img src="thumbs/film-1e82bbaa.jpg" alt="Sophie hugging GD from behind by the window" loading="lazy"><figcaption>▸ 11</figcaption></figure>
-      <figure class="frame" data-p="p140"><img src="thumbs/p140.jpg" alt="Foreheads touching" loading="lazy"><figcaption>▸ 12</figcaption></figure>
-      <figure class="frame" data-p="p135"><img src="thumbs/p135.jpg" alt="Resting heads on the pantry table" loading="lazy"><figcaption>▸ 13</figcaption></figure>
-      <figure class="frame" data-p="p146"><img src="thumbs/p146.jpg" alt="Talking across a table in black and white" loading="lazy"><figcaption>▸ 14</figcaption></figure>
-      <figure class="frame" data-p="film-1f4045bc"><img src="thumbs/film-1f4045bc.jpg" alt="A blurred dash through the pantry" loading="lazy"><figcaption>▸ 15</figcaption></figure>
+      <figure class="frame" data-p="film-60f683ca"><img src="thumbs/film-60f683ca.jpg" alt="Crossing the street holding hands"><figcaption>▸ 05</figcaption></figure>
+      <figure class="frame" data-p="p111"><img src="thumbs/p111.jpg" alt="Sophie looking back at the crosswalk"><figcaption>▸ 06</figcaption></figure>
+      <figure class="frame" data-p="film-74469468"><img src="thumbs/film-74469468.jpg" alt="Waiting at a city corner"><figcaption>▸ 07</figcaption></figure>
+      <figure class="frame" data-p="p113"><img src="thumbs/p113.jpg" alt="Walking on a rainy sidewalk, smiling back"><figcaption>▸ 08</figcaption></figure>
+      <figure class="frame" data-p="film-1c2f546c"><img src="thumbs/film-1c2f546c.jpg" alt="GD kissing Sophie's forehead on the sidewalk"><figcaption>▸ 09</figcaption></figure>
+      <figure class="frame" data-p="p114"><img src="thumbs/p114.jpg" alt="A rainy street walk in black and white"><figcaption>▸ 10</figcaption></figure>
+      <figure class="frame" data-p="film-1e82bbaa"><img src="thumbs/film-1e82bbaa.jpg" alt="Sophie hugging GD from behind by the window"><figcaption>▸ 11</figcaption></figure>
+      <figure class="frame" data-p="p140"><img src="thumbs/p140.jpg" alt="Foreheads touching"><figcaption>▸ 12</figcaption></figure>
+      <figure class="frame" data-p="p135"><img src="thumbs/p135.jpg" alt="Resting heads on the pantry table"><figcaption>▸ 13</figcaption></figure>
+      <figure class="frame" data-p="p146"><img src="thumbs/p146.jpg" alt="Talking across a table in black and white"><figcaption>▸ 14</figcaption></figure>
+      <figure class="frame" data-p="film-1f4045bc"><img src="thumbs/film-1f4045bc.jpg" alt="A blurred dash through the pantry"><figcaption>▸ 15</figcaption></figure>
     </div>
     <p class="wrap note">7 · 11 · 2024 — the day we made it official.</p>
   </section>
@@ -745,9 +778,9 @@ footer .big span{font-family:var(--script)}
       <p>On Christmas Day, at the Esperon Household, he asked. She said yes. The ring has been catching the light ever since.</p>
     </div>
     <div class="prints">
-      <figure class="print tape" style="grid-column:1/6;grid-row:1/16;--r:-3deg;--ar:1058/1600" data-p="engaged"><img src="thumbs/engaged.jpg" alt="GD and Sophie on their engagement day, Sophie showing her ring" loading="lazy"><figcaption><span>▸ 16A</span><span>25 · 12 · 25 · YES</span></figcaption></figure>
-      <figure class="print" style="grid-column:3/11;grid-row:12/22;--r:-1deg;--ar:3/2;z-index:3" data-p="film-f2dec468"><img src="thumbs/film-f2dec468.jpg" alt="Holding hands by an elevator, veil trailing" loading="lazy"><figcaption><span>▸ 18A</span><span>HOLD ON</span></figcaption></figure>
-      <figure class="print" style="grid-column:8/13;grid-row:2/17;--r:4deg" data-p="p089"><img src="thumbs/p089.jpg" alt="Two hands with rings against a rainy window" loading="lazy"><figcaption><span>▸ 17A</span><span>THE RING</span></figcaption></figure>
+      <figure class="print tape" style="grid-column:1/6;grid-row:1/16;--r:-3deg;--ar:1058/1600" data-p="engaged"><img src="thumbs/engaged.jpg" alt="GD and Sophie on their engagement day, Sophie showing her ring"><figcaption><span class="mark">G <i>♡</i> S</span><span>SHE SAID YES</span></figcaption></figure>
+      <figure class="print" style="grid-column:3/11;grid-row:12/22;--r:-1deg;--ar:3/2;z-index:3" data-p="film-f2dec468"><img src="thumbs/film-f2dec468.jpg" alt="Holding hands by an elevator, veil trailing"><figcaption><span class="mark">G <i>♡</i> S</span><span>HOLD ON</span></figcaption></figure>
+      <figure class="print" style="grid-column:8/13;grid-row:2/17;--r:4deg" data-p="p089"><img src="thumbs/p089.jpg" alt="Two hands with rings against a rainy window"><figcaption><span class="mark">G <i>♡</i> S</span><span>THE RING</span></figcaption></figure>
     </div>
     <p class="swipe-hint" aria-hidden="true">Swipe for more →</p>
   </section>
@@ -767,10 +800,10 @@ footer .big span{font-family:var(--script)}
       <p>We went back to the office where it all began, this time in barong and terno sleeves.</p>
     </div>
     <div class="prints">
-      <figure class="print tape" style="grid-column:1/7;grid-row:1/14;--r:-3deg" data-p="p069"><img src="thumbs/p069.jpg" alt="Walking hand in hand down the office hallway" loading="lazy"><figcaption><span>▸ 19A</span><span>HALLWAY</span></figcaption></figure>
-      <figure class="print" style="grid-column:7/13;grid-row:3/16;--r:3deg" data-p="p075"><img src="thumbs/p075.jpg" alt="Leaning against wood panels in barong and terno" loading="lazy"><figcaption><span>▸ 20A</span><span>GOLDEN WALL</span></figcaption></figure>
-      <figure class="print" style="grid-column:2/8;grid-row:14/22;--r:2deg;--ar:3/2;margin-top:14px" data-p="p024"><img src="thumbs/p024.jpg" alt="Sitting at the window ledge, almost touching hands" loading="lazy"><figcaption><span>▸ 21A</span><span>WINDOW</span></figcaption></figure>
-      <figure class="print" style="grid-column:8/13;grid-row:16/26;--r:-4deg;margin-top:10px" data-p="p067"><img src="thumbs/p067.jpg" alt="Standing together in a doorway" loading="lazy"><figcaption><span>▸ 22A</span><span>DOORWAY</span></figcaption></figure>
+      <figure class="print tape" style="grid-column:1/7;grid-row:1/14;--r:-3deg" data-p="p069"><img src="thumbs/p069.jpg" alt="Walking hand in hand down the office hallway"><figcaption><span class="mark">G <i>♡</i> S</span><span>HALLWAY</span></figcaption></figure>
+      <figure class="print" style="grid-column:7/13;grid-row:3/16;--r:3deg" data-p="p075"><img src="thumbs/p075.jpg" alt="Leaning against wood panels in barong and terno"><figcaption><span class="mark">G <i>♡</i> S</span><span>GOLDEN WALL</span></figcaption></figure>
+      <figure class="print" style="grid-column:2/8;grid-row:14/22;--r:2deg;--ar:3/2;margin-top:14px" data-p="p024"><img src="thumbs/p024.jpg" alt="Sitting at the window ledge, almost touching hands"><figcaption><span class="mark">G <i>♡</i> S</span><span>WINDOW</span></figcaption></figure>
+      <figure class="print" style="grid-column:8/13;grid-row:16/26;--r:-4deg;margin-top:10px" data-p="p067"><img src="thumbs/p067.jpg" alt="Standing together in a doorway"><figcaption><span class="mark">G <i>♡</i> S</span><span>DOORWAY</span></figcaption></figure>
     </div>
     <p class="swipe-hint" aria-hidden="true">Swipe for more →</p>
   </section>
@@ -784,10 +817,10 @@ footer .big span{font-family:var(--script)}
       <p>Rain on the windows, light from the AF sign, and a mantilla veil. A preview of the day we can’t wait to share with you.</p>
     </div>
     <div class="prints">
-      <figure class="print tape" style="grid-column:1/8;grid-row:1/10;--r:-2deg;--ar:3/2" data-p="p110"><img src="thumbs/p110.jpg" alt="Sophie in a veil and GD in barong under the glowing AF sign" loading="lazy"><figcaption><span>▸ 23A</span><span>AF</span></figcaption></figure>
-      <figure class="print" style="grid-column:8/13;grid-row:2/14;--r:4deg" data-p="p098"><img src="thumbs/p098.jpg" alt="Sophie looking over her shoulder through the lace veil" loading="lazy"><figcaption><span>▸ 24A</span><span>MANTILLA</span></figcaption></figure>
-      <figure class="print" style="grid-column:1/6;grid-row:10/20;--r:3deg;margin-top:12px" data-p="p101"><img src="thumbs/p101.jpg" alt="At the elevator, GD crouching and Sophie in veil" loading="lazy"><figcaption><span>▸ 25A</span><span>LIFT</span></figcaption></figure>
-      <figure class="print" style="grid-column:6/13;grid-row:14/22;--r:-3deg;--ar:3/2;margin-top:10px" data-p="p086"><img src="thumbs/p086.jpg" alt="Sitting by rainy high-rise windows, Sophie in veil" loading="lazy"><figcaption><span>▸ 26A</span><span>12 · 26 · 26</span></figcaption></figure>
+      <figure class="print tape" style="grid-column:1/8;grid-row:1/10;--r:-2deg;--ar:3/2" data-p="p110"><img src="thumbs/p110.jpg" alt="Sophie in a veil and GD in barong under the glowing AF sign"><figcaption><span class="mark">G <i>♡</i> S</span><span>AF</span></figcaption></figure>
+      <figure class="print" style="grid-column:8/13;grid-row:2/14;--r:4deg" data-p="p098"><img src="thumbs/p098.jpg" alt="Sophie looking over her shoulder through the lace veil"><figcaption><span class="mark">G <i>♡</i> S</span><span>MANTILLA</span></figcaption></figure>
+      <figure class="print" style="grid-column:1/6;grid-row:10/20;--r:3deg;margin-top:12px" data-p="p101"><img src="thumbs/p101.jpg" alt="At the elevator, GD crouching and Sophie in veil"><figcaption><span class="mark">G <i>♡</i> S</span><span>LIFT</span></figcaption></figure>
+      <figure class="print" style="grid-column:6/13;grid-row:14/22;--r:-3deg;--ar:3/2;margin-top:10px" data-p="p086"><img src="thumbs/p086.jpg" alt="Sitting by rainy high-rise windows, Sophie in veil"><figcaption><span class="mark">G <i>♡</i> S</span><span>12 · 26 · 26</span></figcaption></figure>
     </div>
     <p class="swipe-hint" aria-hidden="true">Swipe for more →</p>
   </section>
@@ -1120,7 +1153,7 @@ if(isPhone){
   });
   // reveal sections as they scroll in (only things below the first screen)
   if(!matchMedia("(prefers-reduced-motion: reduce)").matches && "IntersectionObserver" in window){
-    const sel="main h2,section h2,.ch-text,.prints,.strip,.runner .tx,.breath>div,.ticket,.notice,.flow,.look,.palette,.dress-notes,.rsvp-card,.bank,.roll li,.epi-inner,.invite>*";
+    const sel="main h2,section h2,.ch-text,.runner .tx,.breath>div,.ticket,.notice,.flow,.look,.palette,.dress-notes,.rsvp-card,.bank,.roll li,.epi-inner,.invite>*";
     const io=new IntersectionObserver(es=>es.forEach(e=>{if(e.isIntersecting){e.target.classList.add("in");io.unobserve(e.target);}}),{rootMargin:"0px 0px -8% 0px"});
     document.querySelectorAll(sel).forEach(el=>{if(el.getBoundingClientRect().top>innerHeight){el.classList.add("rv");io.observe(el);}});
   }
