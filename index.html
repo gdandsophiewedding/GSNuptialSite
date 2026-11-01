@@ -272,6 +272,7 @@ p{margin:0}
 .chip{font:500 11px var(--mono);letter-spacing:.16em;text-transform:uppercase;padding:9px 16px;border-radius:999px;border:1px solid rgba(43,21,25,.3);background:transparent;color:var(--ink);cursor:pointer}
 .chip[aria-pressed="true"]{background:var(--burgundy);border-color:var(--burgundy);color:var(--print)}
 .masonry{columns:4 230px;column-gap:14px}
+@media (max-width:600px){.masonry{columns:2;column-gap:8px}.tile{margin-bottom:8px}}
 .tile{break-inside:avoid;margin:0 0 14px;padding:0;border:0;background:var(--pina-2);display:block;width:100%;cursor:zoom-in;position:relative;overflow:hidden}
 .tile img{width:100%;height:auto;transition:transform .8s,filter .5s}
 .tile:hover img{transform:scale(1.04)}
@@ -297,6 +298,10 @@ p{margin:0}
 .fin{text-align:center;margin-top:64px;font:italic 400 clamp(30px,4vw,44px) var(--display);color:var(--thread)}
 .fin i{font-size:.6em;color:#d9c9ae}
 @media (max-width:640px){.roll li{grid-template-columns:1fr;gap:6px;text-align:center}.roll .role{text-align:center}.roll .dots{display:none}}
+.more-wrap{position:relative;display:flex;justify-content:center;margin-top:-140px;padding-top:140px;background:linear-gradient(180deg,rgba(237,229,211,0),var(--pina) 70%)}
+.btn.more{color:var(--ink);border-color:rgba(43,21,25,.4);background:var(--print);position:relative}
+.btn.more:hover{background:var(--burgundy);border-color:var(--burgundy);color:var(--print)}
+.masonry.open+.more-wrap{display:none}
 /* lightbox */
 .lb{position:fixed;inset:0;z-index:80;background:rgba(20,6,9,.94);display:grid;grid-template-columns:auto minmax(0,1fr) auto;align-items:center;
   padding:calc(56px + env(safe-area-inset-top,0px)) var(--gutter-r) calc(56px + env(safe-area-inset-bottom,0px)) var(--gutter)}
@@ -634,36 +639,6 @@ footer p.meta{margin-top:18px;font:400 12px var(--mono);letter-spacing:.2em;text
   </div>
 </section>
 
-<section class="gallery" id="gallery" aria-labelledby="gh">
-  <div class="wrap">
-    <div class="gallery-head">
-      <div><p class="eyebrow" style="color:var(--olive)"><span id="gcount">53</span> frames</p><h2 id="gh">The whole roll</h2></div>
-      <div class="filters" role="group" aria-label="Filter photos">
-        <button class="chip" aria-pressed="true" data-f="all">All</button>
-        <button class="chip" aria-pressed="false" data-f="film">Film</button>
-        <button class="chip" aria-pressed="false" data-f="barong">Barong &amp; terno</button>
-        <button class="chip" aria-pressed="false" data-f="veil">The veil</button>
-      </div>
-    </div>
-    <div class="masonry" id="masonry"></div>
-  </div>
-</section>
-
-<section class="credits" aria-labelledby="crh">
-  <div class="slate" aria-hidden="true"></div>
-  <div class="wrap">
-    <p class="eyebrow">Roll credits</p>
-    <h2 id="crh">The people behind the frames</h2>
-    <ol class="roll">
-      <li><span class="role">Photography</span><span class="dots" aria-hidden="true"></span><span class="who"><b>Gunita of Days</b><a href="https://www.instagram.com/gunita_of_days/" target="_blank" rel="noopener">@gunita_of_days ↗</a></span></li>
-      <li><span class="role">Film</span><span class="dots" aria-hidden="true"></span><span class="who"><b>Shanren ArtFilm</b><a href="https://www.instagram.com/shanrenartfilm/" target="_blank" rel="noopener">@shanrenartfilm ↗</a></span></li>
-      <li><span class="role">Hair &amp; makeup</span><span class="dots" aria-hidden="true"></span><span class="who"><b>Makeup by Frances Palis</b><a href="https://www.instagram.com/makeupbyfrancespalis/" target="_blank" rel="noopener">@makeupbyfrancespalis ↗</a></span></li>
-      <li class="purple"><span class="role">Where it all began</span><span class="dots" aria-hidden="true"></span><span class="who"><b>Anytime Fitness Purple Community</b><span class="tag">Our first chapter, and still our people</span></span></li>
-    </ol>
-    <p class="fin">Fin. <i>(For now.)</i></p>
-  </div>
-</section>
-
 <section class="rsvp" id="rsvp" aria-labelledby="rh">
   <div class="wrap">
     <div class="rsvp-card">
@@ -749,6 +724,37 @@ footer p.meta{margin-top:18px;font:400 12px var(--mono);letter-spacing:.2em;text
   <div class="calado" aria-hidden="true"></div>
 </section>
 
+<section class="gallery" id="gallery" aria-labelledby="gh">
+  <div class="wrap">
+    <div class="gallery-head">
+      <div><p class="eyebrow" style="color:var(--olive)"><span id="gcount">53</span> frames</p><h2 id="gh">The whole roll</h2></div>
+      <div class="filters" role="group" aria-label="Filter photos">
+        <button class="chip" aria-pressed="true" data-f="all">All</button>
+        <button class="chip" aria-pressed="false" data-f="film">Film</button>
+        <button class="chip" aria-pressed="false" data-f="barong">Barong &amp; terno</button>
+        <button class="chip" aria-pressed="false" data-f="veil">The veil</button>
+      </div>
+    </div>
+    <div class="masonry" id="masonry"></div>
+    <div class="more-wrap" id="moreWrap"><button class="btn more" id="moreBtn" type="button">See the whole roll · <span id="moreN">53</span> frames</button></div>
+  </div>
+</section>
+
+<section class="credits" aria-labelledby="crh">
+  <div class="slate" aria-hidden="true"></div>
+  <div class="wrap">
+    <p class="eyebrow">Roll credits</p>
+    <h2 id="crh">The people behind the frames</h2>
+    <ol class="roll">
+      <li><span class="role">Photography</span><span class="dots" aria-hidden="true"></span><span class="who"><b>Gunita of Days</b><a href="https://www.instagram.com/gunita_of_days/" target="_blank" rel="noopener">@gunita_of_days ↗</a></span></li>
+      <li><span class="role">Film</span><span class="dots" aria-hidden="true"></span><span class="who"><b>Shanren ArtFilm</b><a href="https://www.instagram.com/shanrenartfilm/" target="_blank" rel="noopener">@shanrenartfilm ↗</a></span></li>
+      <li><span class="role">Hair &amp; makeup</span><span class="dots" aria-hidden="true"></span><span class="who"><b>Makeup by Frances Palis</b><a href="https://www.instagram.com/makeupbyfrancespalis/" target="_blank" rel="noopener">@makeupbyfrancespalis ↗</a></span></li>
+      <li class="purple"><span class="role">Where it all began</span><span class="dots" aria-hidden="true"></span><span class="who"><b>Anytime Fitness Purple Community</b><span class="tag">Our first chapter, and still our people</span></span></li>
+    </ol>
+    <p class="fin">See you on the twenty-sixth.</p>
+  </div>
+</section>
+
 <footer>
   <div class="wrap">
     <img class="foot-logo" src="media/logo-gold.png" alt="GD &amp; Sophie wedding monogram" width="120" height="125">
@@ -788,7 +794,13 @@ PHOTOS.forEach(([n,w,h],i)=>{
   b.innerHTML=`<img src="thumbs/${n}.jpg" width="${w}" height="${h}" alt="GD and Sophie, prenup photo ${i+1}" loading="lazy"><span>▸ ${String(i+1).padStart(2,"0")}</span>`;
   mas.appendChild(b);
 });
-document.querySelectorAll(".chip").forEach(c=>c.addEventListener("click",()=>{
+const PREVIEW=12, PICKS=["p110","film-d7e29958","p069","engaged","film-60f683ca","p098","p023","film-9eb7fe4a","p101","p051","film-1c2f546c","p075"];
+// put a varied set of favourites first so the preview tells the whole story
+PICKS.slice().reverse().forEach(n=>{const t=mas.querySelector(`[data-p="${n}"]`); if(t) mas.prepend(t);});
+function limit(){ if(mas.classList.contains("open"))return; [...mas.querySelectorAll(".tile")].forEach((t,i)=>t.hidden=i>=PREVIEW); }
+limit(); document.getElementById("moreN").textContent=PHOTOS.length;
+document.getElementById("moreBtn").addEventListener("click",()=>{mas.classList.add("open"); mas.querySelectorAll(".tile").forEach(t=>t.hidden=false);});
+document.querySelectorAll(".chip").forEach(c=>c.addEventListener("click",()=>{ mas.classList.add("open");
   document.querySelectorAll(".chip").forEach(x=>x.setAttribute("aria-pressed",x===c));
   let k=0; const f=c.dataset.f;
   mas.querySelectorAll(".tile").forEach(t=>{const on=f==="all"||t.dataset.tag===f; t.hidden=!on; if(on)k++;});
@@ -797,9 +809,9 @@ document.querySelectorAll(".chip").forEach(c=>c.addEventListener("click",()=>{
 
 // ----- lightbox (any element with data-p opens it)
 const lb=document.getElementById("lb"), lbImg=document.getElementById("lbImg"), lbCount=document.getElementById("lbCount");
-const order=PHOTOS.map(p=>p[0]); let cur=0, lastFocus=null;
+let order=PHOTOS.map(p=>p[0]); const syncOrder=()=>{order=[...mas.querySelectorAll(".tile")].map(t=>t.dataset.p);}; let cur=0, lastFocus=null;
 function show(i){cur=(i+order.length)%order.length; lbImg.src=`photos/${order[cur]}.jpg`; lbImg.alt=`GD and Sophie, photo ${cur+1}`; lbCount.textContent=`${cur+1} / ${order.length}`;}
-function openLb(n){lastFocus=document.activeElement; show(Math.max(0,order.indexOf(n))); lb.hidden=false; document.body.style.overflow="hidden"; document.getElementById("lbClose").focus();}
+function openLb(n){syncOrder(); lastFocus=document.activeElement; show(Math.max(0,order.indexOf(n))); lb.hidden=false; document.body.style.overflow="hidden"; document.getElementById("lbClose").focus();}
 function closeLb(){lb.hidden=true; document.body.style.overflow=""; lastFocus&&lastFocus.focus();}
 document.addEventListener("click",e=>{const t=e.target.closest("[data-p]"); if(t&&!lb.contains(t)&&!stripDragged) openLb(t.dataset.p);});
 document.getElementById("lbClose").onclick=closeLb;
