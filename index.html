@@ -25,6 +25,7 @@
   --burgundy:#6E1F2C;
   --wine:#3A0E17;        /* cinema band */
   --sage:#A4AE8E;
+  --pina-tone:#E6D7B8;   /* natural piña / champagne */
   --olive:#56602F;
   --thread:#C6A464;      /* calado embroidery thread */
   --print:#FBF8F1;       /* photo print border */
@@ -153,14 +154,17 @@ p{margin:0}
 }
 
 
-.epilogue{text-align:center;padding-block:clamp(70px,10vw,120px);border-top:1px solid rgba(43,21,25,.14)}
-.epilogue h3{margin-top:14px;font-size:clamp(56px,10vw,140px);font-style:italic;color:var(--burgundy)}
-.epilogue p:not(.ch-num){margin:26px auto 0;max-width:48ch;color:var(--ink-soft);font-size:19px}
-.epilogue em{font-family:var(--display);font-size:1.12em;color:var(--ink)}
-.blank{display:flex;justify-content:center;gap:clamp(10px,2vw,22px);margin-top:44px}
-.blank span{width:clamp(70px,12vw,120px);aspect-ratio:2/3;background:var(--print);box-shadow:0 18px 36px -18px rgba(43,21,25,.45);border:1px dashed rgba(198,164,100,.8)}
-.blank span:nth-child(1){transform:rotate(-5deg)}.blank span:nth-child(3){transform:rotate(5deg)}
-.blank span:nth-child(2){transform:translateY(-12px)}
+.epilogue{position:relative;isolation:isolate;overflow:hidden;text-align:center;color:var(--print);background:var(--wine);padding-block:clamp(110px,16vw,200px)}
+.epilogue>img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;z-index:-2;transform:scale(1.08);animation:drift 18s ease-in-out infinite alternate}
+.epilogue::before{content:"";position:absolute;inset:0;z-index:-1;background:radial-gradient(80% 70% at 50% 50%,rgba(58,14,23,.45),rgba(42,10,16,.88)),linear-gradient(180deg,rgba(42,10,16,.5),rgba(42,10,16,.2) 40%,rgba(42,10,16,.7))}
+.epilogue .ch-num{color:var(--thread)}
+.epilogue h3{margin-top:10px;font-size:clamp(68px,13vw,180px);font-style:italic;letter-spacing:-.02em;line-height:.95;text-shadow:0 10px 40px rgba(0,0,0,.35)}
+.epilogue .epi-text{margin:28px auto 0;max-width:46ch;font-size:19px;color:#eadfcd}
+.epilogue em{font-family:var(--display);font-size:1.12em;color:var(--print)}
+.pen{margin-top:40px;display:inline-flex;align-items:center;gap:6px;font:500 clamp(13px,1.6vw,16px) var(--mono);letter-spacing:.22em;text-transform:uppercase;color:var(--thread);border-top:1px solid rgba(198,164,100,.45);padding-top:18px}
+.caret{width:2px;height:1.2em;background:var(--thread);animation:blink 1s steps(1) infinite}
+@keyframes blink{50%{opacity:0}}
+@keyframes drift{from{transform:scale(1.08) translateX(-1.5%)}to{transform:scale(1.14) translateX(1.5%)}}
 /* film strip */
 .strip-wrap{margin-top:8px;background:#1b0b0f;padding-block:34px;position:relative}
 .strip-head{color:var(--print);display:flex;justify-content:space-between;align-items:end;gap:20px;flex-wrap:wrap;margin-bottom:22px}
@@ -249,6 +253,14 @@ p{margin:0}
 .swatch b{font:italic 400 24px var(--display);display:block}
 .swatch span{font:400 11px var(--mono);letter-spacing:.14em;color:var(--ink-soft)}
 .palette p{color:var(--ink-soft);font-size:15px;margin-top:8px;max-width:30ch}
+.dress-notes{margin-top:56px;display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:2px;background:rgba(198,164,100,.5)}
+.dress-notes>div{background:var(--print);padding:24px 28px}
+.dress-notes>div:first-child{background:var(--burgundy);color:var(--print)}
+.dress-notes>div:first-child p{color:#ead9cf}
+.dress-notes b{font:500 12px var(--mono);letter-spacing:.18em;text-transform:uppercase;display:block;margin-bottom:8px;color:var(--thread)}
+.dress-notes>div:last-child b{color:var(--olive)}
+.dress-notes p{color:var(--ink-soft);font-size:16px}
+@media (max-width:700px){.dress-notes{grid-template-columns:1fr}}
 @media (max-width:900px){.attire-grid{grid-template-columns:repeat(2,minmax(0,1fr))}.palette{grid-column:1/-1;grid-template-columns:repeat(2,minmax(0,1fr))}.palette .eyebrow,.palette p{grid-column:1/-1}.look:nth-child(2){margin-top:50px}}
 @media (max-width:520px){.attire-grid{grid-template-columns:1fr}.look:nth-child(2){margin-top:0}.palette{grid-template-columns:1fr}}
 
@@ -266,6 +278,25 @@ p{margin:0}
 .tile span{position:absolute;left:10px;bottom:8px;font:500 10px var(--mono);letter-spacing:.14em;color:var(--print);text-shadow:0 1px 3px rgba(0,0,0,.6);opacity:0;transition:opacity .3s}
 .tile:hover span,.tile:focus-visible span{opacity:1}
 
+/* credits */
+.credits{background:var(--wine);color:var(--print);padding-block:0 clamp(70px,9vw,110px);position:relative;overflow:hidden}
+.credits .slate{height:26px;background:repeating-linear-gradient(-45deg,var(--print) 0 22px,#14060a 22px 44px);margin-bottom:clamp(60px,8vw,96px)}
+.credits .eyebrow{color:var(--thread);text-align:center}
+.credits h2{text-align:center;margin-top:12px;font-size:clamp(40px,6.5vw,80px)}
+.roll{list-style:none;margin:56px auto 0;padding:0;max-width:880px;display:grid;gap:30px}
+.roll li{display:grid;grid-template-columns:minmax(0,1fr) 60px minmax(0,1.4fr);align-items:baseline;gap:18px}
+.roll .role{text-align:right;font:500 12px var(--mono);letter-spacing:.22em;text-transform:uppercase;color:var(--thread)}
+.roll .dots{border-bottom:1px dotted rgba(198,164,100,.6);transform:translateY(-4px)}
+.roll .who{display:grid;gap:4px;min-width:0}
+.roll b{font:italic 400 clamp(26px,3.4vw,40px)/1.05 var(--display);font-weight:400}
+.roll a,.roll .tag{font:400 13px var(--mono);letter-spacing:.08em;color:#d9c9ae;text-decoration:none;overflow-wrap:anywhere}
+.roll a:hover{color:var(--thread);text-decoration:underline}
+.roll li.purple b{color:#C9B6F2}
+.roll li.purple .role{color:#B49CEB}
+.roll li.purple .dots{border-color:rgba(180,156,235,.6)}
+.fin{text-align:center;margin-top:64px;font:italic 400 clamp(30px,4vw,44px) var(--display);color:var(--thread)}
+.fin i{font-size:.6em;color:#d9c9ae}
+@media (max-width:640px){.roll li{grid-template-columns:1fr;gap:6px;text-align:center}.roll .role{text-align:center}.roll .dots{display:none}}
 /* lightbox */
 .lb{position:fixed;inset:0;z-index:80;background:rgba(20,6,9,.94);display:grid;grid-template-columns:auto minmax(0,1fr) auto;align-items:center;
   padding:calc(56px + env(safe-area-inset-top,0px)) var(--gutter-r) calc(56px + env(safe-area-inset-bottom,0px)) var(--gutter)}
@@ -325,6 +356,16 @@ input:focus,select:focus,textarea:focus{outline:none;border-color:var(--burgundy
 .gifts h2{font-size:clamp(40px,6vw,76px)}
 .gifts p{max-width:48ch;margin:24px auto 0;color:var(--ink-soft);font-size:19px}
 .gifts .calado{max-width:200px;margin:36px auto 0}
+.banks{display:grid;grid-template-columns:repeat(2,minmax(0,280px));justify-content:center;gap:clamp(18px,4vw,48px);margin:44px auto 0;align-items:end}
+.bank{margin:0;background:var(--print);padding:14px 14px 18px;box-shadow:0 24px 50px -26px rgba(43,21,25,.5);transition:transform .4s}
+.bank:nth-child(1){transform:rotate(-2deg)}.bank:nth-child(2){transform:rotate(2deg)}
+.bank:hover{transform:rotate(0) scale(1.02)}
+.bank img{width:100%;height:auto;background:#fff}
+.bank figcaption{margin-top:12px;display:grid;gap:2px}
+.bank b{font:italic 400 26px var(--display);color:var(--burgundy)}
+.bank span{font:500 11px var(--mono);letter-spacing:.14em;text-transform:uppercase;color:var(--ink-soft)}
+.gifts p.howto{font-size:15px;margin-top:30px;max-width:52ch}
+@media (max-width:520px){.banks{grid-template-columns:minmax(0,300px)}}
 footer{background:var(--wine);color:#d9c9ae;padding-block:70px calc(40px + env(safe-area-inset-bottom,0px));text-align:center}
 footer .foot-logo{width:120px;height:auto;margin:0 auto 26px}
 footer .big{font:italic 400 clamp(46px,10vw,130px)/.9 var(--display);color:var(--print)}
@@ -498,11 +539,14 @@ footer p.meta{margin-top:18px;font:400 12px var(--mono);letter-spacing:.2em;text
     </div>
   </section>
   <!-- VII epilogue: our song -->
-  <section class="wrap epilogue" aria-labelledby="ch7">
-    <p class="ch-num">Chapter VII · Our song</p>
-    <h3 id="ch7">Unwritten</h3>
-    <p>Everything after 26 December is a blank page, and we can’t wait to fill it with you in it. Our song is <em>“Unwritten”</em> by Natasha Bedingfield, and that’s how we want the day to feel: hopeful, free and wide open.</p>
-    <div class="blank" aria-hidden="true"><span></span><span></span><span></span></div>
+  <section class="epilogue" aria-labelledby="ch7">
+    <img src="photos/p152.jpg" alt="" loading="lazy">
+    <div class="wrap epi-inner">
+      <p class="ch-num">Chapter VII · Our song</p>
+      <h3 id="ch7">Unwritten</h3>
+      <p class="epi-text">Everything after 26 December is a blank page, and we can’t wait to fill it with you in it. Our song is <em>“Unwritten”</em> by Natasha Bedingfield, and that’s how we want the day to feel: hopeful, free and wide open.</p>
+      <p class="pen">Page one begins 26 · 12 · 2026<span class="caret" aria-hidden="true"></span></p>
+    </div>
   </section>
 </main>
 
@@ -568,19 +612,24 @@ footer p.meta{margin-top:18px;font:400 12px var(--mono);letter-spacing:.2em;text
     <div class="attire-grid">
       <figure class="look">
         <div class="ph" data-p="p057"><img src="thumbs/p057.jpg" alt="GD in an embroidered barong tagalog" loading="lazy"></div>
-        <figcaption><h3>Gentlemen</h3><ul><li>Barong tagalog</li><li>Black slacks</li><li>Black shoes</li></ul></figcaption>
+        <figcaption><h3>Gentlemen</h3><ul><li>Barong tagalog in its natural piña color</li><li>Strictly black slacks</li><li>Strictly black shoes</li></ul></figcaption>
       </figure>
       <figure class="look">
         <div class="ph" data-p="p013"><img src="thumbs/p013.jpg" alt="Sophie in a filipiniana gown with terno sleeves" loading="lazy"></div>
-        <figcaption><h3>Ladies</h3><ul><li>Modern filipiniana</li><li>or baro’t saya</li></ul></figcaption>
+        <figcaption><h3>Ladies</h3><ul><li>Modern filipiniana or baro’t saya</li><li>In any shade from our palette</li></ul></figcaption>
       </figure>
       <div class="palette">
         <p class="eyebrow">Our colors</p>
         <div class="swatch"><i style="background:var(--burgundy)"></i><div><b>Burgundy</b><span>DEEP WINE RED</span></div></div>
         <div class="swatch"><i style="background:var(--sage)"></i><div><b>Sage</b><span>SOFT GREY-GREEN</span></div></div>
         <div class="swatch"><i style="background:var(--olive)"></i><div><b>Olive</b><span>DEEP LEAF GREEN</span></div></div>
-        <p>The wedding palette, if you’d like your filipiniana to match the day.</p>
+        <div class="swatch"><i style="background:var(--pina-tone)"></i><div><b>Piña</b><span>NATURAL CHAMPAGNE · ECRU</span></div></div>
+        <p>Piña is the soft, warm beige of natural piña fabric, somewhere between champagne and ecru.</p>
       </div>
+    </div>
+    <div class="dress-notes">
+      <div><b>Entourage, Ninongs &amp; Ninangs</b><p>Please wear the outfit we sent you earlier this year. Thank you for standing with us!</p></div>
+      <div><b>All our guests</b><p>Gentlemen keep it classic: natural barong, black slacks, black shoes. Ladies, you’re free to choose any shade from our palette.</p></div>
     </div>
   </div>
 </section>
@@ -597,6 +646,21 @@ footer p.meta{margin-top:18px;font:400 12px var(--mono);letter-spacing:.2em;text
       </div>
     </div>
     <div class="masonry" id="masonry"></div>
+  </div>
+</section>
+
+<section class="credits" aria-labelledby="crh">
+  <div class="slate" aria-hidden="true"></div>
+  <div class="wrap">
+    <p class="eyebrow">Roll credits</p>
+    <h2 id="crh">The people behind the frames</h2>
+    <ol class="roll">
+      <li><span class="role">Photography</span><span class="dots" aria-hidden="true"></span><span class="who"><b>Gunita of Days</b><a href="https://www.instagram.com/gunita_of_days/" target="_blank" rel="noopener">@gunita_of_days ↗</a></span></li>
+      <li><span class="role">Film</span><span class="dots" aria-hidden="true"></span><span class="who"><b>Shanren ArtFilm</b><a href="https://www.instagram.com/shanrenartfilm/" target="_blank" rel="noopener">@shanrenartfilm ↗</a></span></li>
+      <li><span class="role">Hair &amp; makeup</span><span class="dots" aria-hidden="true"></span><span class="who"><b>Makeup by Frances Palis</b><a href="https://www.instagram.com/makeupbyfrancespalis/" target="_blank" rel="noopener">@makeupbyfrancespalis ↗</a></span></li>
+      <li class="purple"><span class="role">Where it all began</span><span class="dots" aria-hidden="true"></span><span class="who"><b>Anytime Fitness Purple Community</b><span class="tag">Our first chapter, and still our people</span></span></li>
+    </ol>
+    <p class="fin">Fin. <i>(For now.)</i></p>
   </div>
 </section>
 
@@ -668,10 +732,20 @@ footer p.meta{margin-top:18px;font:400 12px var(--mono);letter-spacing:.2em;text
   </div>
 </section>
 
-<section class="gifts wrap" aria-labelledby="gifh">
+<section class="gifts wrap" id="gifts" aria-labelledby="gifh">
   <p class="eyebrow" style="color:var(--olive)">Gifts</p>
-  <h2 id="gifh">Your presence is the gift</h2>
-  <p>No monetary gift is required. If you wish to give one anyway, we’ll share our bank details and QR codes closer to the day, with our heartfelt thanks.</p>
+  <h2 id="gifh">For our next chapter</h2>
+  <p>Having you there is already the best gift. But if your heart is set on giving a little something, we won’t say no. Any blessing toward our life together will be received with so much love and gratitude. Salamat po!</p>
+  <div class="banks">
+    <figure class="bank">
+      <a href="media/gift-bdo-gd.jpg" target="_blank" rel="noopener" download><img src="media/gift-bdo-gd.jpg" alt="BDO InstaPay QR code for GD" loading="lazy" width="720" height="720"></a>
+      <figcaption><b>BDO</b><span>GD · account ending 7754</span></figcaption>
+    </figure>
+    <figure class="bank">
+      <a href="media/gift-maribank-sophie.jpg" target="_blank" rel="noopener" download><img src="media/gift-maribank-sophie.jpg" alt="MariBank InstaPay QR code for Sophie" loading="lazy" width="720" height="720"></a>
+      <figcaption><b>MariBank</b><span>Sophie · account ending 3253</span></figcaption>
+    </figure>
+  </div>
   <div class="calado" aria-hidden="true"></div>
 </section>
 
