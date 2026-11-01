@@ -1,0 +1,836 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta property="og:title" content="GD &amp; Sophie · 26 December 2026">
+<meta property="og:description" content="We're getting married! Our story, the day, and RSVP.">
+<meta property="og:image" content="media/poster.jpg">
+<meta name="theme-color" content="#3A0E17">
+<title>GD &amp; Sophie</title>
+<meta name="claude:viewport-fit-sides" content="cover">
+<link rel="icon" type="image/png" href="media/favicon.png">
+<meta name="description" content="GD &amp; Sophie are getting married — Saturday, 26 December 2026.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bodoni+Moda:ital,opsz,wght@0,6..96,400..700;1,6..96,400..700&family=Instrument+Sans:wght@400;500;600&family=DM+Mono:wght@400;500&family=Noto+Sans+Tagalog&display=swap">
+<style>
+/* Layout: a piña-paper invitation interrupted by burgundy "cinema" bands; story told as overlapping prints and a film strip; calado diamond stitching as the recurring thread. */
+:root{
+  color-scheme: light;
+  --pina:#EDE5D3;        /* piña fibre paper */
+  --pina-2:#E3D9C2;
+  --ink:#2B1519;         /* burgundy-black ink */
+  --ink-soft:#5C4448;
+  --burgundy:#6E1F2C;
+  --wine:#3A0E17;        /* cinema band */
+  --sage:#A4AE8E;
+  --olive:#56602F;
+  --thread:#C6A464;      /* calado embroidery thread */
+  --print:#FBF8F1;       /* photo print border */
+  --display:"Bodoni Moda", "Didot", "Bodoni 72", Georgia, serif;
+  --body:"Instrument Sans", "Segoe UI", system-ui, sans-serif;
+  --mono:"DM Mono", ui-monospace, "SFMono-Regular", Menlo, monospace;
+  --baybayin:"Noto Sans Tagalog", serif;
+  --gutter:max(16px, env(safe-area-inset-left, 0px));
+  --gutter-r:max(16px, env(safe-area-inset-right, 0px));
+  --calado:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='30' height='30' viewBox='0 0 30 30'%3E%3Cpath d='M15 2 28 15 15 28 2 15Z' fill='none' stroke='%23C6A464' stroke-width='1.1' stroke-dasharray='2.2 2'/%3E%3Cpath d='M15 9.5 20.5 15 15 20.5 9.5 15Z' fill='%23C6A464' fill-opacity='.6'/%3E%3Ccircle cx='15' cy='15' r='1.3' fill='%23FBF8F1'/%3E%3C/svg%3E");
+}
+*{box-sizing:border-box}
+[hidden]{display:none!important}
+html{scroll-behavior:smooth}
+body{margin:0;background:var(--pina);color:var(--ink);font:400 17px/1.65 var(--body);-webkit-font-smoothing:antialiased;overflow-x:hidden}
+body::before{content:"";position:fixed;inset:0 0 auto;height:env(safe-area-inset-top,0px);z-index:60;background:var(--wine)}
+/* film grain over everything */
+body::after{content:"";position:fixed;inset:-50%;z-index:90;pointer-events:none;opacity:.10;mix-blend-mode:multiply;
+  background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='220' height='220'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.85' numOctaves='3' stitchTiles='stitch'/%3E%3CfeColorMatrix values='0 0 0 0 .2 0 0 0 0 .1 0 0 0 0 .1 0 0 0 .9 0'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
+  animation:grain 1.2s steps(6) infinite}
+@keyframes grain{0%{transform:translate(0,0)}20%{transform:translate(-3%,2%)}40%{transform:translate(2%,-4%)}60%{transform:translate(-4%,-1%)}80%{transform:translate(3%,3%)}100%{transform:translate(0,0)}}
+img{max-width:100%;display:block}
+a{color:inherit}
+:focus-visible{outline:2px solid var(--thread);outline-offset:3px}
+.wrap{max-width:1180px;margin:0 auto;padding-left:var(--gutter);padding-right:var(--gutter-r)}
+.eyebrow{font:500 12px/1.3 var(--mono);letter-spacing:.22em;text-transform:uppercase}
+h1,h2,h3{font-family:var(--display);font-weight:400;text-wrap:balance;margin:0;line-height:1.02}
+h2{font-size:clamp(40px,7vw,88px);font-style:italic;letter-spacing:-.01em}
+p{margin:0}
+.calado{height:30px;background:var(--calado) repeat-x center/30px 30px}
+
+/* ---------- nav ---------- */
+.nav{position:fixed;top:env(safe-area-inset-top,0px);left:0;right:0;z-index:50;display:flex;align-items:center;justify-content:space-between;gap:16px;
+  padding:14px var(--gutter-r) 14px var(--gutter);color:var(--print);transition:background .4s,box-shadow .4s}
+.nav.solid{background:rgba(58,14,23,.92);backdrop-filter:blur(10px);box-shadow:0 1px 0 rgba(198,164,100,.35)}
+.mono-mark{font:italic 600 22px/1 var(--display);text-decoration:none;letter-spacing:.02em}
+.mono-mark span{color:var(--thread)}
+.mono-mark img{height:44px;width:auto;display:block}
+.nav ul{display:flex;gap:26px;list-style:none;margin:0;padding:0}
+.nav ul a{font:500 12px var(--mono);letter-spacing:.18em;text-transform:uppercase;text-decoration:none;opacity:.85}
+.nav ul a:hover{opacity:1;color:var(--thread)}
+.btn{display:inline-flex;align-items:center;gap:10px;font:500 12px var(--mono);letter-spacing:.18em;text-transform:uppercase;text-decoration:none;
+  padding:12px 20px;border:1px solid var(--thread);color:var(--print);background:transparent;cursor:pointer;border-radius:999px;transition:background .25s,color .25s}
+.btn:hover{background:var(--thread);color:var(--wine)}
+.btn.solid{background:var(--burgundy);border-color:var(--burgundy)}
+.btn.solid:hover{background:var(--wine);color:var(--print)}
+@media (max-width:860px){.nav ul{display:none}}
+
+/* ---------- hero ---------- */
+.hero{position:relative;min-height:min(94svh,940px);display:grid;align-items:end;color:var(--print);background:var(--wine);overflow:hidden;isolation:isolate}
+.hero video{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;z-index:-2;filter:saturate(.85) contrast(1.05)}
+.hero::before{content:"";position:absolute;inset:0;z-index:-1;
+  background:linear-gradient(180deg,rgba(58,14,23,.45) 0%,rgba(58,14,23,0) 24%,rgba(58,14,23,.1) 50%,rgba(42,10,16,.92) 90%),
+             radial-gradient(120% 70% at 50% 110%,rgba(110,31,44,.7),transparent 60%)}
+.hero-inner{padding-top:140px;padding-bottom:40px;display:grid;grid-template-columns:1fr auto;gap:32px;align-items:end}
+.hero .eyebrow{color:var(--thread);margin-bottom:18px}
+.names{font-size:clamp(76px,15.5vw,212px);font-style:italic;line-height:.86;letter-spacing:-.025em}
+.names .amp{font-style:normal;color:var(--thread);font-size:.55em;vertical-align:.32em;margin:0 .08em}
+.fullnames{margin-top:22px;font:400 13px/1.7 var(--mono);letter-spacing:.14em;text-transform:uppercase;opacity:.86}
+.date-line{margin-top:26px;display:flex;flex-wrap:wrap;gap:10px 22px;align-items:center;font:400 clamp(20px,2.4vw,28px)/1.2 var(--display)}
+.date-line i{color:var(--thread)}
+/* wax seal sound button */
+.seal{position:relative;width:148px;height:148px;border:0;padding:0;background:none;cursor:pointer;color:var(--print);justify-self:end}
+.seal svg.ring{position:absolute;inset:0;animation:spin 22s linear infinite}
+.seal .wax{position:absolute;inset:26px;border-radius:50%;display:grid;place-items:center;
+  background:radial-gradient(circle at 35% 30%,#9a3443,var(--burgundy) 45%,#4a111c 100%);
+  box-shadow:inset 0 -6px 12px rgba(0,0,0,.35),inset 0 5px 10px rgba(255,255,255,.18),0 10px 30px rgba(0,0,0,.45);
+  font:italic 600 30px/1 var(--display);transition:transform .3s}
+.seal:hover .wax{transform:scale(1.06) rotate(-6deg)}
+.seal .wax img{width:52px;height:auto;margin:0 auto 2px}
+.seal .wax small{display:block;font:500 9px var(--mono);letter-spacing:.2em;font-style:normal;margin-top:4px;opacity:.9}
+@keyframes spin{to{transform:rotate(360deg)}}
+.countdown{border-top:1px solid rgba(198,164,100,.4);display:grid;grid-template-columns:repeat(4,1fr) 2fr;gap:0}
+.countdown div{padding:18px 0 20px;border-right:1px solid rgba(198,164,100,.25)}
+.countdown div:last-child{border-right:0;text-align:right}
+.countdown b{display:block;font:400 clamp(30px,4.2vw,52px)/1 var(--display);font-variant-numeric:tabular-nums}
+.countdown span{font:500 11px var(--mono);letter-spacing:.2em;text-transform:uppercase;opacity:.75}
+.countdown div:not(:first-child){padding-left:clamp(10px,2vw,24px)}
+@media (max-width:700px){
+  .hero-inner{grid-template-columns:1fr;padding-top:120px}
+  .seal{width:118px;height:118px;justify-self:start;order:-1;margin-bottom:-8px}
+  .seal .wax{inset:21px;font-size:24px}
+  .seal .wax img{width:42px}
+  .countdown{grid-template-columns:repeat(4,1fr)}
+  .countdown div:last-child{display:none}
+  .countdown div:nth-child(4){border-right:0}
+}
+
+/* ---------- invitation note ---------- */
+.invite{padding-block:clamp(72px,11vw,140px);text-align:center;position:relative}
+.invite .baybayin{overflow-wrap:anywhere;font:400 clamp(44px,7vw,74px)/1 var(--baybayin);color:var(--burgundy);letter-spacing:.06em}
+.invite .gloss{margin-top:10px;color:var(--ink-soft)}
+.invite p.lede{margin:34px auto 0;max-width:22ch;font:italic 400 clamp(30px,4.6vw,56px)/1.12 var(--display)}
+.invite p.lede em{color:var(--burgundy)}
+.invite p.sub{margin:26px auto 0;max-width:52ch;color:var(--ink-soft)}
+.invite .calado{max-width:330px;margin:44px auto 0}
+.invite-logo{width:110px;height:auto;margin:48px auto 0}
+
+/* ---------- story ---------- */
+.story{padding-bottom:40px}
+.chapter{display:grid;grid-template-columns:minmax(0,5fr) minmax(0,7fr);gap:clamp(28px,5vw,72px);padding-block:clamp(56px,8vw,110px);align-items:start;border-top:1px solid rgba(43,21,25,.14)}
+.chapter.flip{grid-template-columns:minmax(0,7fr) minmax(0,5fr)}
+.chapter.flip .ch-text{order:2}
+.ch-text{position:sticky;top:110px}
+.ch-num{font:italic 400 18px var(--display);color:var(--burgundy)}
+.ch-date{margin-top:6px;color:var(--olive)}
+.ch-text h3{margin-top:16px;font-size:clamp(38px,5.2vw,68px);font-style:italic}
+.ch-text p{margin-top:20px;max-width:42ch;color:var(--ink-soft)}
+@media (max-width:860px){
+  .chapter,.chapter.flip{grid-template-columns:1fr}
+  .chapter.flip .ch-text{order:0}
+  .ch-text{position:static}
+}
+/* prints: real photo prints with borders, overlapping */
+.prints{display:grid;grid-template-columns:repeat(12,1fr);grid-auto-rows:minmax(18px,auto);position:relative}
+.print{margin:0;background:var(--print);padding:9px 9px 34px;box-shadow:0 1px 1px rgba(43,21,25,.08),0 18px 40px -14px rgba(43,21,25,.45);
+  transform:rotate(var(--r,0deg)) translateY(var(--py,0px));transition:transform .5s cubic-bezier(.2,.7,.2,1),box-shadow .4s;position:relative;cursor:zoom-in}
+.print:hover{transform:rotate(0deg) translateY(var(--py,0px)) scale(1.03);z-index:5;box-shadow:0 30px 60px -18px rgba(43,21,25,.55)}
+.print img{width:100%;height:100%;object-fit:cover;aspect-ratio:var(--ar,2/3);background:var(--pina-2)}
+.print figcaption{position:absolute;left:12px;right:12px;bottom:9px;font:500 10px var(--mono);letter-spacing:.14em;color:#9b7f78;display:flex;justify-content:space-between}
+.tape::before{content:"";position:absolute;top:-12px;left:50%;width:84px;height:24px;transform:translateX(-50%) rotate(-3deg);background:rgba(164,174,142,.55);box-shadow:0 1px 2px rgba(0,0,0,.08);z-index:2}
+@media (max-width:860px){
+  .prints{grid-template-columns:repeat(6,1fr);row-gap:16px}
+  .prints .print{grid-column:auto / span 3 !important;grid-row:auto !important;margin-top:0 !important}
+  .prints .print.wide{grid-column:1 / -1 !important}
+}
+
+
+.epilogue{text-align:center;padding-block:clamp(70px,10vw,120px);border-top:1px solid rgba(43,21,25,.14)}
+.epilogue h3{margin-top:14px;font-size:clamp(56px,10vw,140px);font-style:italic;color:var(--burgundy)}
+.epilogue p:not(.ch-num){margin:26px auto 0;max-width:48ch;color:var(--ink-soft);font-size:19px}
+.epilogue em{font-family:var(--display);font-size:1.12em;color:var(--ink)}
+.blank{display:flex;justify-content:center;gap:clamp(10px,2vw,22px);margin-top:44px}
+.blank span{width:clamp(70px,12vw,120px);aspect-ratio:2/3;background:var(--print);box-shadow:0 18px 36px -18px rgba(43,21,25,.45);border:1px dashed rgba(198,164,100,.8)}
+.blank span:nth-child(1){transform:rotate(-5deg)}.blank span:nth-child(3){transform:rotate(5deg)}
+.blank span:nth-child(2){transform:translateY(-12px)}
+/* film strip */
+.strip-wrap{margin-top:8px;background:#1b0b0f;padding-block:34px;position:relative}
+.strip-head{color:var(--print);display:flex;justify-content:space-between;align-items:end;gap:20px;flex-wrap:wrap;margin-bottom:22px}
+.strip-head h3{font-size:clamp(36px,5vw,64px);font-style:italic}
+.strip-head .eyebrow{color:var(--thread)}
+.strip{display:flex;gap:0;overflow-x:auto;scroll-snap-type:x mandatory;padding-block:28px;cursor:grab;scrollbar-width:thin;scrollbar-color:var(--thread) transparent;
+  background:
+    radial-gradient(circle,#EDE5D3 0 4px,transparent 4.6px) 0 8px/26px 26px repeat-x,
+    radial-gradient(circle,#EDE5D3 0 4px,transparent 4.6px) 0 calc(100% - 8px)/26px 26px repeat-x,
+    #0f0507}
+.strip::-webkit-scrollbar{height:6px}.strip::-webkit-scrollbar-thumb{background:var(--thread);border-radius:3px}
+.frame{flex:0 0 auto;scroll-snap-align:center;padding:0 7px;position:relative;cursor:zoom-in;margin:0}
+.frame img{height:clamp(240px,42vw,430px);width:auto;max-width:none;filter:saturate(.95)}
+.frame figcaption{position:absolute;bottom:-24px;left:10px;font:500 10px var(--mono);letter-spacing:.16em;color:#e08f3e}
+.strip-wrap .note{color:#bfae98;margin-top:22px;font:400 12px var(--mono);letter-spacing:.12em}
+
+/* tattoo full-bleed */
+.runner{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);min-height:620px;background:var(--print)}
+.runner .ph{position:relative;overflow:hidden;cursor:zoom-in}
+.runner .ph img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}
+.runner .tx{display:flex;flex-direction:column;justify-content:center;gap:22px;padding:clamp(40px,7vw,96px) var(--gutter-r) clamp(40px,7vw,96px) clamp(28px,6vw,90px)}
+.runner h3{font-size:clamp(44px,6vw,84px);font-style:italic}
+.runner p{max-width:38ch;color:var(--ink-soft)}
+.runner .pair{display:flex;gap:16px;margin-top:6px}
+.runner .pair figure{margin:0;width:46%;cursor:zoom-in}
+.runner .pair img{aspect-ratio:2/3;object-fit:cover;width:100%}
+@media (max-width:800px){.runner{grid-template-columns:1fr}.runner .ph{min-height:520px}.runner .tx{padding-left:var(--gutter)}}
+
+/* breath: cinematic full bleed */
+.breath{position:relative;min-height:clamp(420px,80vh,820px);display:grid;place-items:center;overflow:hidden;color:var(--print);text-align:center;isolation:isolate;background:var(--wine)}
+.breath img{position:absolute;inset:-10% 0;width:100%;height:120%;object-fit:cover;z-index:-2;transform:translateY(var(--py,0))}
+.breath::before{content:"";position:absolute;inset:0;z-index:-1;background:radial-gradient(70% 60% at 50% 50%,rgba(42,10,16,.15),rgba(42,10,16,.75))}
+.breath p{font:italic 400 clamp(34px,6vw,84px)/1.05 var(--display);max-width:16ch;margin:auto;padding:0 var(--gutter)}
+.breath .eyebrow{color:var(--thread);margin-bottom:22px}
+
+/* ---------- film / cinema ---------- */
+.cinema{background:var(--wine);color:var(--print);padding-block:clamp(70px,10vw,130px);position:relative}
+.cinema .calado{position:absolute;left:0;right:0;top:0;opacity:.8}
+.cinema-head{display:flex;justify-content:space-between;align-items:end;gap:24px;flex-wrap:wrap;margin-bottom:34px}
+.cinema-head .eyebrow{color:var(--thread)}
+.screen{position:relative;border:1px solid rgba(198,164,100,.45);padding:clamp(8px,1.4vw,16px);background:#13060a;box-shadow:0 40px 90px -30px rgba(0,0,0,.8)}
+.screen video{width:100%;display:block;aspect-ratio:16/9;background:#000}
+
+/* ---------- details ---------- */
+.details{padding-block:clamp(80px,11vw,140px)}
+.details-head{display:grid;grid-template-columns:minmax(0,1fr) auto;gap:24px;align-items:end;margin-bottom:46px}
+.details-head p{color:var(--ink-soft);max-width:40ch}
+.tickets{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:28px}
+.ticket{background:var(--print);position:relative;padding:34px clamp(22px,3.4vw,40px) 30px;
+  box-shadow:0 30px 60px -36px rgba(43,21,25,.55);display:flex;flex-direction:column;gap:18px;min-width:0}
+.ticket::before{content:"";position:absolute;inset:10px;border:1px solid rgba(198,164,100,.7);pointer-events:none}
+.ticket .when{display:flex;align-items:baseline;justify-content:space-between;gap:12px;border-bottom:1px dashed rgba(43,21,25,.25);padding-bottom:16px}
+.ticket .time{font:400 clamp(54px,6vw,78px)/.9 var(--display);color:var(--burgundy);font-variant-numeric:tabular-nums}
+.ticket .time small{font-size:.38em;margin-left:6px;font-style:italic}
+.ticket h3{font-size:clamp(28px,3vw,36px);font-style:italic}
+.ticket address{font-style:normal;color:var(--ink-soft)}
+.ticket .row{display:flex;gap:10px;flex-wrap:wrap;margin-top:auto}
+.ticket .btn{color:var(--ink);border-color:rgba(43,21,25,.35)}
+.ticket .btn:hover{background:var(--ink);color:var(--print);border-color:var(--ink)}
+.notice{margin-top:28px;display:grid;grid-template-columns:auto minmax(0,1fr);gap:18px;align-items:start;padding:22px 26px;background:var(--olive);color:#F1EEDF}
+.notice b{font:500 12px var(--mono);letter-spacing:.18em;text-transform:uppercase;color:#e7dbb6;display:block;margin-bottom:4px}
+.flow{margin-top:56px;display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:0;border-top:1px solid rgba(43,21,25,.2)}
+.flow div{padding:18px 18px 0 0}
+.flow b{font:400 26px var(--display);display:block}
+.flow span{color:var(--ink-soft);font-size:15px}
+@media (max-width:820px){.tickets{grid-template-columns:1fr}.details-head{grid-template-columns:1fr}.flow{grid-template-columns:repeat(2,minmax(0,1fr));row-gap:12px}}
+
+/* ---------- attire ---------- */
+.attire{background:var(--pina-2);padding-block:clamp(80px,11vw,140px);position:relative;overflow:hidden}
+.attire-grid{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr) minmax(0,.9fr);gap:clamp(20px,3vw,40px);align-items:start;margin-top:44px}
+.look{margin:0}
+.look .ph{position:relative;overflow:hidden;cursor:zoom-in;aspect-ratio:3/4}
+.look img{width:100%;height:100%;object-fit:cover;transition:transform 1.2s}
+.look:hover img{transform:scale(1.05)}
+.look .ph::after{content:"";position:absolute;inset:0;border:8px solid var(--print);pointer-events:none}
+.look figcaption{padding-top:18px}
+.look h3{font-size:clamp(30px,3.3vw,42px);font-style:italic}
+.look ul{margin:12px 0 0;padding:0;list-style:none;display:grid;gap:6px}
+.look li{display:flex;gap:10px;align-items:baseline;color:var(--ink-soft)}
+.look li::before{content:"◆";color:var(--thread);font-size:10px}
+.look:nth-child(2){margin-top:90px}
+.palette{align-self:center;display:grid;gap:14px}
+.palette .eyebrow{color:var(--olive)}
+.swatch{display:flex;align-items:center;gap:16px}
+.swatch i{width:66px;height:66px;border-radius:50%;flex:none;box-shadow:inset 0 -6px 10px rgba(0,0,0,.18),0 8px 18px -8px rgba(0,0,0,.4)}
+.swatch b{font:italic 400 24px var(--display);display:block}
+.swatch span{font:400 11px var(--mono);letter-spacing:.14em;color:var(--ink-soft)}
+.palette p{color:var(--ink-soft);font-size:15px;margin-top:8px;max-width:30ch}
+@media (max-width:900px){.attire-grid{grid-template-columns:repeat(2,minmax(0,1fr))}.palette{grid-column:1/-1;grid-template-columns:repeat(2,minmax(0,1fr))}.palette .eyebrow,.palette p{grid-column:1/-1}.look:nth-child(2){margin-top:50px}}
+@media (max-width:520px){.attire-grid{grid-template-columns:1fr}.look:nth-child(2){margin-top:0}.palette{grid-template-columns:1fr}}
+
+/* ---------- gallery ---------- */
+.gallery{padding-block:clamp(80px,11vw,140px)}
+.gallery-head{display:flex;justify-content:space-between;align-items:end;gap:20px;flex-wrap:wrap;margin-bottom:38px}
+.gallery-head p{color:var(--ink-soft);max-width:36ch}
+.filters{display:flex;gap:8px;flex-wrap:wrap}
+.chip{font:500 11px var(--mono);letter-spacing:.16em;text-transform:uppercase;padding:9px 16px;border-radius:999px;border:1px solid rgba(43,21,25,.3);background:transparent;color:var(--ink);cursor:pointer}
+.chip[aria-pressed="true"]{background:var(--burgundy);border-color:var(--burgundy);color:var(--print)}
+.masonry{columns:4 230px;column-gap:14px}
+.tile{break-inside:avoid;margin:0 0 14px;padding:0;border:0;background:var(--pina-2);display:block;width:100%;cursor:zoom-in;position:relative;overflow:hidden}
+.tile img{width:100%;height:auto;transition:transform .8s,filter .5s}
+.tile:hover img{transform:scale(1.04)}
+.tile span{position:absolute;left:10px;bottom:8px;font:500 10px var(--mono);letter-spacing:.14em;color:var(--print);text-shadow:0 1px 3px rgba(0,0,0,.6);opacity:0;transition:opacity .3s}
+.tile:hover span,.tile:focus-visible span{opacity:1}
+
+/* lightbox */
+.lb{position:fixed;inset:0;z-index:80;background:rgba(20,6,9,.94);display:grid;grid-template-columns:auto minmax(0,1fr) auto;align-items:center;
+  padding:calc(56px + env(safe-area-inset-top,0px)) var(--gutter-r) calc(56px + env(safe-area-inset-bottom,0px)) var(--gutter)}
+.lb img{max-height:calc(100svh - 140px);margin:auto;box-shadow:0 30px 80px rgba(0,0,0,.6);border:8px solid var(--print)}
+.lb button{background:none;border:1px solid rgba(198,164,100,.5);color:var(--print);width:48px;height:48px;border-radius:50%;cursor:pointer;font:400 20px var(--body)}
+.lb button:hover{background:var(--thread);color:var(--wine)}
+.lb .close{position:absolute;top:calc(14px + env(safe-area-inset-top,0px));right:var(--gutter-r)}
+.lb .count{position:absolute;bottom:calc(18px + env(safe-area-inset-bottom,0px));left:0;right:0;text-align:center;color:#cbb79a;font:400 12px var(--mono);letter-spacing:.2em}
+@media (max-width:600px){.lb{grid-template-columns:1fr}.lb .prev,.lb .next{position:absolute;bottom:calc(8px + env(safe-area-inset-bottom,0px))}.lb .prev{left:var(--gutter)}.lb .next{right:var(--gutter-r)}}
+
+/* ---------- RSVP (capiz window) ---------- */
+.rsvp{position:relative;padding-block:clamp(80px,11vw,140px);
+  background:
+   linear-gradient(90deg,var(--burgundy) 0 7px,transparent 7px) 0 0/72px 72px,
+   linear-gradient(0deg,var(--burgundy) 0 7px,transparent 7px) 0 0/72px 72px,
+   radial-gradient(circle at 30% 28%,rgba(255,255,255,.55),rgba(255,255,255,0) 55%) 0 0/72px 72px,
+   linear-gradient(135deg,#EFE9DA,#D9D3C0 60%,#E7E0CF);}
+.rsvp::before{content:"";position:absolute;inset:0;background:radial-gradient(60% 50% at 50% 50%,rgba(237,229,211,.0),rgba(58,14,23,.28));pointer-events:none}
+.rsvp-card{position:relative;max-width:820px;margin:0 auto;background:var(--print);padding:clamp(30px,5vw,64px);box-shadow:0 50px 100px -40px rgba(43,21,25,.7)}
+.rsvp-card::before{content:"";position:absolute;inset:12px;border:1px solid rgba(198,164,100,.7);pointer-events:none}
+.rsvp-card .calado{margin:22px 0 30px;max-width:240px}
+.rsvp-card .by{color:var(--burgundy);font:500 12px var(--mono);letter-spacing:.18em;text-transform:uppercase;margin-top:14px}
+form{display:grid;gap:22px;position:relative}
+.fields{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:18px 22px}
+.field{display:grid;gap:7px;min-width:0}
+.field.full{grid-column:1/-1}
+label,.legend{font:500 11px var(--mono);letter-spacing:.16em;text-transform:uppercase;color:var(--ink-soft)}
+input,select,textarea{font:400 17px var(--body);color:var(--ink);background:transparent;border:0;border-bottom:1px solid rgba(43,21,25,.35);padding:10px 2px;border-radius:0;width:100%;min-width:0}
+textarea{resize:vertical;min-height:84px;border:1px solid rgba(43,21,25,.25);padding:12px}
+input:focus,select:focus,textarea:focus{outline:none;border-color:var(--burgundy);box-shadow:0 1px 0 var(--burgundy)}
+.choice{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:12px}
+.choice input{position:absolute;opacity:0;pointer-events:none}
+.choice label{display:block;text-transform:none;letter-spacing:0;font:italic 400 22px var(--display);color:var(--ink);text-align:center;padding:18px 12px;border:1px solid rgba(43,21,25,.25);cursor:pointer;transition:all .25s}
+.choice input:checked+label{background:var(--burgundy);color:var(--print);border-color:var(--burgundy)}
+.choice input:focus-visible+label{outline:2px solid var(--thread);outline-offset:2px}
+.idbox{border:1px dashed rgba(86,96,47,.6);background:rgba(164,174,142,.14);padding:20px;display:grid;gap:16px}
+.idbox .why{font-size:14px;color:var(--olive);display:flex;gap:10px}
+.plusbox{display:grid;gap:14px;border-top:1px dashed rgba(86,96,47,.45);padding-top:16px}
+.plusnote{font-size:14px;color:var(--ink-soft)}.plusnote b{color:var(--burgundy);font-weight:600}
+.pluslist{display:grid;gap:14px}
+.guest{background:var(--print);border:1px solid rgba(198,164,100,.6);padding:16px 18px;display:grid;gap:14px}
+.guest-h{font:italic 400 20px var(--display);color:var(--burgundy)}
+.kidnote{font-size:14px;color:var(--olive);background:rgba(164,174,142,.18);padding:10px 12px}
+.check{display:flex;gap:12px;align-items:flex-start;font:400 15px var(--body);text-transform:none;letter-spacing:0;color:var(--ink-soft);cursor:pointer}
+.check input{width:18px;height:18px;flex:none;margin-top:3px;accent-color:var(--burgundy)}
+.submit-row{display:flex;justify-content:space-between;align-items:center;gap:16px;flex-wrap:wrap}
+.submit-row small{color:var(--ink-soft);font-size:13px;max-width:40ch}
+.err{color:#9b1c2e;font-size:14px}
+.thanks{text-align:center;padding:30px 0 10px}
+.thanks h3{font-size:clamp(40px,6vw,64px);font-style:italic;color:var(--burgundy)}
+.thanks p{margin-top:14px;color:var(--ink-soft)}
+.thanks .preview{display:inline-block;margin-top:18px;font:500 11px var(--mono);letter-spacing:.14em;text-transform:uppercase;background:var(--pina-2);padding:8px 12px}
+@media (max-width:620px){.fields,.choice{grid-template-columns:1fr}}
+
+/* ---------- gifts + footer ---------- */
+.gifts{padding-block:clamp(80px,11vw,130px);text-align:center}
+.gifts h2{font-size:clamp(40px,6vw,76px)}
+.gifts p{max-width:48ch;margin:24px auto 0;color:var(--ink-soft);font-size:19px}
+.gifts .calado{max-width:200px;margin:36px auto 0}
+footer{background:var(--wine);color:#d9c9ae;padding-block:70px calc(40px + env(safe-area-inset-bottom,0px));text-align:center}
+footer .foot-logo{width:120px;height:auto;margin:0 auto 26px}
+footer .big{font:italic 400 clamp(46px,10vw,130px)/.9 var(--display);color:var(--print)}
+footer .big span{color:var(--thread);font-style:normal;font-size:.55em;vertical-align:.3em}
+footer .bb{overflow-wrap:anywhere;font:400 28px var(--baybayin);color:var(--thread);margin-top:18px;letter-spacing:.08em}
+footer p.meta{margin-top:18px;font:400 12px var(--mono);letter-spacing:.2em;text-transform:uppercase}
+
+@media (prefers-reduced-motion:reduce){
+  *,*::before,*::after{animation:none!important;transition:none!important;scroll-behavior:auto!important}
+}
+</style>
+</head>
+<body>
+
+<nav class="nav" id="nav" aria-label="Main">
+  <a class="mono-mark" href="#top" aria-label="GD &amp; Sophie, back to top"><img src="media/logo-gold.png" alt="" width="42" height="44"></a>
+  <ul>
+    <li><a href="#story">Our story</a></li>
+    <li><a href="#film">The film</a></li>
+    <li><a href="#details">The day</a></li>
+    <li><a href="#attire">Attire</a></li>
+    <li><a href="#gallery">Gallery</a></li>
+  </ul>
+  <a class="btn" href="#rsvp">RSVP</a>
+</nav>
+
+<header class="hero" id="top">
+  <video id="heroVideo" autoplay muted loop playsinline preload="auto" poster="media/poster.jpg">
+    <source src="media/prenup-film.mp4" type="video/mp4">
+  </video>
+  <div class="wrap">
+    <div class="hero-inner">
+      <div>
+        <p class="eyebrow">Together with our families · We are getting married</p>
+        <h1 class="names">GD<span class="amp">&amp;</span>Sophie</h1>
+        <p class="fullnames">Guillermo E. Domondon II &nbsp;·&nbsp; Sophia Alessandra D. Minglana</p>
+        <p class="date-line"><span>Saturday</span><i>◆</i><span>26 December 2026</span><i>◆</i><span>Parañaque &amp; Taguig</span></p>
+      </div>
+      <button class="seal" id="seal" type="button" aria-label="Play our film with sound">
+        <svg class="ring" viewBox="0 0 148 148" aria-hidden="true">
+          <defs><path id="circ" d="M74,74 m-62,0 a62,62 0 1,1 124,0 a62,62 0 1,1 -124,0"/></defs>
+          <text fill="#C6A464" font-family="DM Mono, monospace" font-size="10.5" letter-spacing="3.2"><textPath href="#circ">TAP FOR SOUND · OUR PRENUP FILM · 12.26.26 ·</textPath></text>
+        </svg>
+        <span class="wax"><span><img src="media/logo-gold.png" alt="" width="52" height="54"><small id="sealLabel">PLAY ▶</small></span></span>
+      </button>
+    </div>
+    <div class="countdown" aria-label="Countdown to the ceremony">
+      <div><b id="cd-d">--</b><span>Days</span></div>
+      <div><b id="cd-h">--</b><span>Hours</span></div>
+      <div><b id="cd-m">--</b><span>Minutes</span></div>
+      <div><b id="cd-s">--</b><span>Seconds</span></div>
+      <div><span>Until 2:00 PM · St. Martin de Porres</span></div>
+    </div>
+  </div>
+</header>
+
+<section class="invite wrap" aria-label="Invitation">
+  <div class="baybayin" lang="tl" aria-hidden="true">ᜉᜄᜒᜊᜒᜄ᜔</div>
+  <p class="gloss eyebrow">pag-ibig · love, in Baybayin</p>
+  <p class="lede">One year and one day after <em>“yes,”</em> we’re saying it again, in front of everyone we love.</p>
+  <p class="sub">He asked on Christmas Day 2025. We marry the day after Christmas 2026. We would be so happy to have you there, in barong and filipiniana, to celebrate with us.</p>
+  <img class="invite-logo" src="media/logo-burgundy.png" alt="GD &amp; Sophie wedding monogram" width="110" height="115">
+</section>
+
+<main id="story" class="story">
+  <!-- I -->
+  <section class="wrap chapter" aria-labelledby="ch1">
+    <div class="ch-text">
+      <p class="ch-num">Chapter I</p>
+      <p class="ch-date eyebrow">Anytime Fitness</p>
+      <h3 id="ch1">Where it started</h3>
+      <p>We met through our jobs at Anytime Fitness: Sophie in Regional HR, GD in Learning &amp; Development and Support. Two very different departments, and somehow we kept ending up in the same pantry.</p>
+    </div>
+    <div class="prints">
+      <figure class="print tape" style="grid-column:1/8;grid-row:1/10;--r:-3deg;--ar:3/2" data-p="film-d7e29958"><img src="thumbs/film-d7e29958.jpg" alt="GD and Sophie making peace signs in the office" loading="lazy"><figcaption><span>▸ 01A</span><span>THE OFFICE</span></figcaption></figure>
+      <figure class="print" style="grid-column:7/13;grid-row:4/16;--r:4deg;--ar:7/10" data-p="film-1ae49048"><img src="thumbs/film-1ae49048.jpg" alt="GD and Sophie leaning on a table in front of the Our Culture wall" loading="lazy"><figcaption><span>▸ 02A</span><span>OUR CULTURE</span></figcaption></figure>
+      <figure class="print" style="grid-column:1/6;grid-row:10/20;--r:2deg;--ar:7/10;margin-top:18px" data-p="film-9eb7fe4a"><img src="thumbs/film-9eb7fe4a.jpg" alt="Sophie holding GD's face, both laughing in the pantry" loading="lazy"><figcaption><span>▸ 03A</span><span>PANTRY</span></figcaption></figure>
+      <figure class="print tape" style="grid-column:5/13;grid-row:16/23;--r:-2deg;--ar:10/7;margin-top:10px" data-p="film-b7f3128e"><img src="thumbs/film-b7f3128e.jpg" alt="GD and Sophie resting their chins on the pantry counter" loading="lazy"><figcaption><span>▸ 04A</span><span>BREAK TIME</span></figcaption></figure>
+    </div>
+  </section>
+
+  <!-- II film strip -->
+  <section class="strip-wrap" aria-labelledby="ch2">
+    <div class="wrap strip-head">
+      <div>
+        <p class="eyebrow">Chapter II · 7 November 2024</p>
+        <h3 id="ch2">And then it was us</h3>
+      </div>
+      <p class="eyebrow" style="color:#bfae98">Drag or swipe the roll →</p>
+    </div>
+    <div class="strip" id="strip" tabindex="0" aria-label="Film strip of city photos">
+      <figure class="frame" data-p="film-60f683ca"><img src="thumbs/film-60f683ca.jpg" alt="Crossing the street holding hands" loading="lazy"><figcaption>▸ 05</figcaption></figure>
+      <figure class="frame" data-p="p111"><img src="thumbs/p111.jpg" alt="Sophie looking back at the crosswalk" loading="lazy"><figcaption>▸ 06</figcaption></figure>
+      <figure class="frame" data-p="film-74469468"><img src="thumbs/film-74469468.jpg" alt="Waiting at a city corner" loading="lazy"><figcaption>▸ 07</figcaption></figure>
+      <figure class="frame" data-p="p113"><img src="thumbs/p113.jpg" alt="Walking on a rainy sidewalk, smiling back" loading="lazy"><figcaption>▸ 08</figcaption></figure>
+      <figure class="frame" data-p="film-1c2f546c"><img src="thumbs/film-1c2f546c.jpg" alt="GD kissing Sophie's forehead on the sidewalk" loading="lazy"><figcaption>▸ 09</figcaption></figure>
+      <figure class="frame" data-p="p114"><img src="thumbs/p114.jpg" alt="A rainy street walk in black and white" loading="lazy"><figcaption>▸ 10</figcaption></figure>
+      <figure class="frame" data-p="film-1e82bbaa"><img src="thumbs/film-1e82bbaa.jpg" alt="Sophie hugging GD from behind by the window" loading="lazy"><figcaption>▸ 11</figcaption></figure>
+      <figure class="frame" data-p="p140"><img src="thumbs/p140.jpg" alt="Foreheads touching" loading="lazy"><figcaption>▸ 12</figcaption></figure>
+      <figure class="frame" data-p="p135"><img src="thumbs/p135.jpg" alt="Resting heads on the pantry table" loading="lazy"><figcaption>▸ 13</figcaption></figure>
+      <figure class="frame" data-p="p146"><img src="thumbs/p146.jpg" alt="Talking across a table in black and white" loading="lazy"><figcaption>▸ 14</figcaption></figure>
+      <figure class="frame" data-p="film-1f4045bc"><img src="thumbs/film-1f4045bc.jpg" alt="A blurred dash through the pantry" loading="lazy"><figcaption>▸ 15</figcaption></figure>
+    </div>
+    <p class="wrap note">7 · 11 · 2024 — the day we made it official.</p>
+  </section>
+
+  <!-- III tattoos -->
+  <section class="runner" aria-labelledby="ch3">
+    <figure class="ph" data-p="p051" style="margin:0"><img src="photos/p051.jpg" alt="Matching running-man tattoos on both their wrists" loading="lazy"></figure>
+    <div class="tx">
+      <p class="ch-num">Chapter III</p>
+      <h3 id="ch3">Same runner, two wrists</h3>
+      <p>The little running man from where we met, inked on both of us. Now running in the same direction for good.</p>
+      <div class="pair">
+        <figure data-p="p050"><img src="thumbs/p050.jpg" alt="Holding hands, tattoo visible" loading="lazy"></figure>
+        <figure data-p="p052"><img src="thumbs/p052.jpg" alt="GD and Sophie smiling at the desk" loading="lazy"></figure>
+      </div>
+    </div>
+  </section>
+
+  <!-- IV the yes -->
+  <section class="wrap chapter flip" aria-labelledby="ch4">
+    <div class="ch-text">
+      <p class="ch-num">Chapter IV</p>
+      <p class="ch-date eyebrow">25 December 2025 · Esperon Household</p>
+      <h3 id="ch4">The question</h3>
+      <p>On Christmas Day, at the Esperon Household, he asked. She said yes. The ring has been catching the light ever since.</p>
+    </div>
+    <div class="prints">
+      <figure class="print tape" style="grid-column:1/8;grid-row:1/18;--r:-2deg;--ar:1058/1600" data-p="engaged"><img src="thumbs/engaged.jpg" alt="GD and Sophie on their engagement day, Sophie showing her ring" loading="lazy"><figcaption><span>▸ 16A</span><span>25 · 12 · 25 · YES</span></figcaption></figure>
+      <figure class="print" style="grid-column:8/13;grid-row:6/19;--r:4deg" data-p="p089"><img src="thumbs/p089.jpg" alt="Two hands with rings against a rainy window" loading="lazy"><figcaption><span>▸ 17A</span><span>THE RING</span></figcaption></figure>
+      <figure class="print" style="grid-column:3/10;grid-row:18/26;--r:2deg;--ar:3/2;margin-top:12px" data-p="film-f2dec468"><img src="thumbs/film-f2dec468.jpg" alt="Holding hands by an elevator, veil trailing" loading="lazy"><figcaption><span>▸ 18A</span><span>HOLD ON</span></figcaption></figure>
+    </div>
+  </section>
+
+  <!-- breath -->
+  <section class="breath" aria-label="Saturday the twenty-sixth">
+    <img src="photos/p023.jpg" alt="" data-parallax>
+    <div><p class="eyebrow">26 · 12 · 2026</p><p>Saturday, the twenty-sixth of December</p></div>
+  </section>
+
+  <!-- V barong & terno -->
+  <section class="wrap chapter" aria-labelledby="ch5">
+    <div class="ch-text">
+      <p class="ch-num">Chapter V</p>
+      <p class="ch-date eyebrow">Barong &amp; terno</p>
+      <h3 id="ch5">Same halls, new clothes</h3>
+      <p>We went back to the office where it all began, this time in barong and terno sleeves.</p>
+    </div>
+    <div class="prints">
+      <figure class="print tape" style="grid-column:1/7;grid-row:1/14;--r:-3deg" data-p="p069"><img src="thumbs/p069.jpg" alt="Walking hand in hand down the office hallway" loading="lazy"><figcaption><span>▸ 19A</span><span>HALLWAY</span></figcaption></figure>
+      <figure class="print" style="grid-column:7/13;grid-row:3/16;--r:3deg" data-p="p075"><img src="thumbs/p075.jpg" alt="Leaning against wood panels in barong and terno" loading="lazy"><figcaption><span>▸ 20A</span><span>GOLDEN WALL</span></figcaption></figure>
+      <figure class="print" style="grid-column:2/8;grid-row:14/22;--r:2deg;--ar:3/2;margin-top:14px" data-p="p024"><img src="thumbs/p024.jpg" alt="Sitting at the window ledge, almost touching hands" loading="lazy"><figcaption><span>▸ 21A</span><span>WINDOW</span></figcaption></figure>
+      <figure class="print" style="grid-column:8/13;grid-row:16/26;--r:-4deg;margin-top:10px" data-p="p067"><img src="thumbs/p067.jpg" alt="Standing together in a doorway" loading="lazy"><figcaption><span>▸ 22A</span><span>DOORWAY</span></figcaption></figure>
+    </div>
+  </section>
+
+  <!-- VI the veil -->
+  <section class="wrap chapter flip" aria-labelledby="ch6">
+    <div class="ch-text">
+      <p class="ch-num">Chapter VI</p>
+      <p class="ch-date eyebrow">26 December 2026</p>
+      <h3 id="ch6">Forever, under one veil</h3>
+      <p>Rain on the windows, light from the AF sign, and a mantilla veil. A preview of the day we can’t wait to share with you.</p>
+    </div>
+    <div class="prints">
+      <figure class="print tape" style="grid-column:1/8;grid-row:1/10;--r:-2deg;--ar:3/2" data-p="p110"><img src="thumbs/p110.jpg" alt="Sophie in a veil and GD in barong under the glowing AF sign" loading="lazy"><figcaption><span>▸ 23A</span><span>AF</span></figcaption></figure>
+      <figure class="print" style="grid-column:8/13;grid-row:2/14;--r:4deg" data-p="p098"><img src="thumbs/p098.jpg" alt="Sophie looking over her shoulder through the lace veil" loading="lazy"><figcaption><span>▸ 24A</span><span>MANTILLA</span></figcaption></figure>
+      <figure class="print" style="grid-column:1/6;grid-row:10/20;--r:3deg;margin-top:12px" data-p="p101"><img src="thumbs/p101.jpg" alt="At the elevator, GD crouching and Sophie in veil" loading="lazy"><figcaption><span>▸ 25A</span><span>LIFT</span></figcaption></figure>
+      <figure class="print" style="grid-column:6/13;grid-row:14/22;--r:-3deg;--ar:3/2;margin-top:10px" data-p="p086"><img src="thumbs/p086.jpg" alt="Sitting by rainy high-rise windows, Sophie in veil" loading="lazy"><figcaption><span>▸ 26A</span><span>12 · 26 · 26</span></figcaption></figure>
+    </div>
+  </section>
+  <!-- VII epilogue: our song -->
+  <section class="wrap epilogue" aria-labelledby="ch7">
+    <p class="ch-num">Chapter VII · Our song</p>
+    <h3 id="ch7">Unwritten</h3>
+    <p>Everything after 26 December is a blank page, and we can’t wait to fill it with you in it. Our song is <em>“Unwritten”</em> by Natasha Bedingfield, and that’s how we want the day to feel: hopeful, free and wide open.</p>
+    <div class="blank" aria-hidden="true"><span></span><span></span><span></span></div>
+  </section>
+</main>
+
+<section class="cinema" id="film" aria-labelledby="filmh">
+  <div class="calado" aria-hidden="true"></div>
+  <div class="wrap">
+    <div class="cinema-head">
+      <div><p class="eyebrow">Now showing</p><h2 id="filmh">Our prenup film</h2></div>
+      <p style="max-width:34ch;color:#d9c9ae">Twenty-five seconds of rainy streets and the city we fell for. Best with sound on.</p>
+    </div>
+    <div class="screen">
+      <video id="filmVideo" controls playsinline preload="metadata" poster="media/poster.jpg">
+        <source src="media/prenup-film.mp4" type="video/mp4">
+      </video>
+    </div>
+  </div>
+</section>
+
+<section class="details" id="details" aria-labelledby="dh">
+  <div class="wrap">
+    <div class="details-head">
+      <div><p class="eyebrow" style="color:var(--olive)">Saturday · 26 December 2026</p><h2 id="dh">The day</h2></div>
+      <p>A church ceremony in Parañaque, then dinner and dancing with the Philippine Navy at Fort Bonifacio.</p>
+    </div>
+    <div class="tickets">
+      <article class="ticket">
+        <div class="when"><span class="eyebrow">The Ceremony</span><span class="time">2:00<small>pm</small></span></div>
+        <h3>St. Martin de Porres Parish Church</h3>
+        <address>United Hills Village, San Martin de Porres,<br>Parañaque City · Diocese of Parañaque</address>
+        <div class="row">
+          <a class="btn" target="_blank" rel="noopener" href="https://www.google.com/maps/search/?api=1&amp;query=St.+Martin+de+Porres+Parish+Church+United+Hills+Village+Paranaque">Open map ↗</a>
+          <a class="btn" target="_blank" rel="noopener" href="https://calendar.google.com/calendar/render?action=TEMPLATE&amp;text=GD+%26+Sophie+%E2%80%94+Wedding+Ceremony&amp;dates=20261226T060000Z/20261226T080000Z&amp;location=St.+Martin+de+Porres+Parish+Church,+United+Hills+Village,+Para%C3%B1aque+City&amp;details=Church+ceremony.+Reception+follows+at+5:00+PM,+CPO+Clubhouse,+Fort+Bonifacio.">Add to calendar ↗</a>
+        </div>
+      </article>
+      <article class="ticket">
+        <div class="when"><span class="eyebrow">The Reception</span><span class="time">5:00<small>pm</small></span></div>
+        <h3>CPO Clubhouse, Philippine Navy</h3>
+        <address>Fort Bonifacio,<br>Taguig City</address>
+        <div class="row">
+          <a class="btn" target="_blank" rel="noopener" href="https://www.google.com/maps/search/?api=1&amp;query=CPO+Clubhouse+Philippine+Navy+Fort+Bonifacio+Taguig">Open map ↗</a>
+          <a class="btn" target="_blank" rel="noopener" href="https://calendar.google.com/calendar/render?action=TEMPLATE&amp;text=GD+%26+Sophie+%E2%80%94+Wedding+Reception&amp;dates=20261226T090000Z/20261226T140000Z&amp;location=CPO+Clubhouse,+Philippine+Navy,+Fort+Bonifacio,+Taguig+City&amp;details=Bring+the+valid+ID+you+registered+in+your+RSVP+for+Navy+gate+entry.">Add to calendar ↗</a>
+        </div>
+      </article>
+    </div>
+    <div class="notice" role="note">
+      <svg width="34" height="34" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2 4 5v6c0 5 3.4 9.4 8 11 4.6-1.6 8-6 8-11V5l-8-3z" fill="none" stroke="#e7dbb6" stroke-width="1.4"/><path d="M8.5 12l2.4 2.4 4.6-5" fill="none" stroke="#e7dbb6" stroke-width="1.4"/></svg>
+      <div><b>Bring your ID</b>The reception is inside a Philippine Navy facility. Every guest needs to be on the gate list, so please register a valid government ID in your RSVP and bring that same ID on the day.</div>
+    </div>
+    <div class="flow" aria-label="Order of the day">
+      <div><b>2:00 PM</b><span>Church ceremony</span></div>
+      <div><b>After the rites</b><span>Photos with family &amp; friends</span></div>
+      <div><b>5:00 PM</b><span>Reception program</span></div>
+      <div><b>Into the night</b><span>Dinner &amp; dancing</span></div>
+    </div>
+  </div>
+</section>
+
+<section class="attire" id="attire" aria-labelledby="ah">
+  <div class="calado" style="position:absolute;top:0;left:0;right:0" aria-hidden="true"></div>
+  <div class="wrap">
+    <p class="eyebrow" style="color:var(--olive)">Motif · Modern Filipino</p>
+    <h2 id="ah">What to wear</h2>
+    <div class="attire-grid">
+      <figure class="look">
+        <div class="ph" data-p="p057"><img src="thumbs/p057.jpg" alt="GD in an embroidered barong tagalog" loading="lazy"></div>
+        <figcaption><h3>Gentlemen</h3><ul><li>Barong tagalog</li><li>Black slacks</li><li>Black shoes</li></ul></figcaption>
+      </figure>
+      <figure class="look">
+        <div class="ph" data-p="p013"><img src="thumbs/p013.jpg" alt="Sophie in a filipiniana gown with terno sleeves" loading="lazy"></div>
+        <figcaption><h3>Ladies</h3><ul><li>Modern filipiniana</li><li>or baro’t saya</li></ul></figcaption>
+      </figure>
+      <div class="palette">
+        <p class="eyebrow">Our colors</p>
+        <div class="swatch"><i style="background:var(--burgundy)"></i><div><b>Burgundy</b><span>DEEP WINE RED</span></div></div>
+        <div class="swatch"><i style="background:var(--sage)"></i><div><b>Sage</b><span>SOFT GREY-GREEN</span></div></div>
+        <div class="swatch"><i style="background:var(--olive)"></i><div><b>Olive</b><span>DEEP LEAF GREEN</span></div></div>
+        <p>The wedding palette, if you’d like your filipiniana to match the day.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="gallery" id="gallery" aria-labelledby="gh">
+  <div class="wrap">
+    <div class="gallery-head">
+      <div><p class="eyebrow" style="color:var(--olive)"><span id="gcount">53</span> frames</p><h2 id="gh">The whole roll</h2></div>
+      <div class="filters" role="group" aria-label="Filter photos">
+        <button class="chip" aria-pressed="true" data-f="all">All</button>
+        <button class="chip" aria-pressed="false" data-f="film">Film</button>
+        <button class="chip" aria-pressed="false" data-f="barong">Barong &amp; terno</button>
+        <button class="chip" aria-pressed="false" data-f="veil">The veil</button>
+      </div>
+    </div>
+    <div class="masonry" id="masonry"></div>
+  </div>
+</section>
+
+<section class="rsvp" id="rsvp" aria-labelledby="rh">
+  <div class="wrap">
+    <div class="rsvp-card">
+      <p class="eyebrow" style="color:var(--olive)">Répondez s’il vous plaît</p>
+      <h2 id="rh">Will you celebrate with us?</h2>
+      <p class="by">Kindly reply on or before 30 November 2026, 10:00 PM</p>
+      <div class="calado" aria-hidden="true"></div>
+
+      <form id="rsvpForm" novalidate>
+        <div class="choice" role="radiogroup" aria-label="Your reply">
+          <input type="radio" name="attending" id="att-yes" value="yes" checked><label for="att-yes">Joyfully accepts</label>
+          <input type="radio" name="attending" id="att-no" value="no"><label for="att-no">Regretfully declines</label>
+        </div>
+        <div class="fields">
+          <div class="field full"><label for="f-name">Full name, as it appears on your ID</label><input id="f-name" name="name" autocomplete="name" required placeholder="Juan Dela Cruz"></div>
+          <div class="field"><label for="f-mobile">Mobile number</label><input id="f-mobile" name="mobile" type="tel" autocomplete="tel" required placeholder="0917 123 4567"></div>
+          <div class="field"><label for="f-email">Email (optional)</label><input id="f-email" name="email" type="email" autocomplete="email" placeholder="you@email.com"></div>
+        </div>
+
+        <div class="idbox" id="idbox">
+          <p class="why"><svg width="18" height="18" viewBox="0 0 24 24" aria-hidden="true" style="flex:none;margin-top:3px"><path d="M12 2 4 5v6c0 5 3.4 9.4 8 11 4.6-1.6 8-6 8-11V5l-8-3z" fill="none" stroke="currentColor" stroke-width="1.6"/></svg>For the Philippine Navy gate list at Fort Bonifacio. Only GD, Sophie and the venue will see this.</p>
+          <div class="fields">
+            <div class="field"><label for="f-idtype">Government ID</label>
+              <select id="f-idtype" name="idType" required>
+                <option value="">Choose your ID</option>
+                <option>PhilSys National ID</option><option>Driver’s License</option><option>Passport</option><option>UMID / SSS</option>
+                <option>PRC ID</option><option>Postal ID</option><option>Voter’s ID</option><option>Other government ID</option>
+              </select></div>
+            <div class="field"><label for="f-idno">ID number</label><input id="f-idno" name="idNumber" required autocomplete="off" placeholder="As printed on the card"></div>
+          </div>
+          <div class="plusbox">
+            <div class="field"><label for="f-pluscount">How many plus-ones?</label>
+              <select id="f-pluscount" name="plusOneCount">
+                <option value="0">None, just me</option><option value="1">1 plus-one</option><option value="2">2 plus-ones</option>
+                <option value="3">3 plus-ones</option><option value="4">4 plus-ones</option><option value="5">5 plus-ones</option>
+              </select></div>
+            <p class="plusnote"><b>Please confirm with GD &amp; Sophie first</b> before adding a plus-one. Seats at the Navy clubhouse are limited and every name goes on the gate list.</p>
+            <label class="check" id="plusConfirmWrap" hidden><input type="checkbox" id="f-plusconfirm"> GD &amp; Sophie have confirmed my plus-one(s).</label>
+            <div id="plusList" class="pluslist"></div>
+          </div>
+          <label class="check"><input type="checkbox" id="f-consent" name="consent"> I agree to share my ID details (and my plus-ones’) with the Philippine Navy for gate clearance on 26 December 2026.</label>
+        </div>
+
+        <div class="fields">
+          <div class="field full" id="dietWrap"><label for="f-diet">Food allergies or dietary needs</label><input id="f-diet" name="dietary" placeholder="None"></div>
+          <div class="field full"><label for="f-msg">A note for GD &amp; Sophie</label><textarea id="f-msg" name="message" placeholder="Your wishes, a memory, a song request…"></textarea></div>
+        </div>
+        <p class="err" id="err" role="alert" hidden></p>
+        <div class="submit-row">
+          <small>Your ID details are used only for the Navy gate list and are deleted after the wedding.</small>
+          <button class="btn solid" type="submit" id="submitBtn">Send my reply</button>
+        </div>
+      </form>
+
+      <div class="thanks" id="closed" hidden>
+        <h3>RSVP is closed</h3>
+        <p>Replies closed on 30 November 2026 at 10:00 PM so we could send the gate list to the Philippine Navy. If you still need to reply, please message GD &amp; Sophie directly.</p>
+      </div>
+
+      <div class="thanks" id="thanks" hidden>
+        <h3 id="thanksTitle">Salamat!</h3>
+        <p id="thanksText">Your reply is in. We can’t wait to see you on the 26th.</p>
+        <span class="preview" id="previewNote" hidden>Design preview · replies aren’t saved yet</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="gifts wrap" aria-labelledby="gifh">
+  <p class="eyebrow" style="color:var(--olive)">Gifts</p>
+  <h2 id="gifh">Your presence is the gift</h2>
+  <p>No monetary gift is required. If you wish to give one anyway, we’ll share our bank details and QR codes closer to the day, with our heartfelt thanks.</p>
+  <div class="calado" aria-hidden="true"></div>
+</section>
+
+<footer>
+  <div class="wrap">
+    <img class="foot-logo" src="media/logo-gold.png" alt="GD &amp; Sophie wedding monogram" width="120" height="125">
+    <p class="big">GD<span>&amp;</span>Sophie</p>
+    <p class="bb" aria-hidden="true">ᜉᜄᜒᜊᜒᜄ᜔</p>
+    <p class="meta">26 · 12 · 2026 &nbsp;·&nbsp; Parañaque &amp; Taguig</p>
+  </div>
+</footer>
+
+<div class="lb" id="lb" hidden role="dialog" aria-modal="true" aria-label="Photo viewer">
+  <button class="close" id="lbClose" aria-label="Close">✕</button>
+  <button class="prev" id="lbPrev" aria-label="Previous photo">←</button>
+  <img id="lbImg" alt="">
+  <button class="next" id="lbNext" aria-label="Next photo">→</button>
+  <p class="count" id="lbCount"></p>
+</div>
+
+<script>
+/* ---- Paste your Google Apps Script web-app URL here to save replies to your Google Sheet ---- */
+const RSVP_ENDPOINT = "https://script.google.com/macros/s/AKfycbyqNKe1ZTSjH5NgcIg2uSBoQ4eOreCUxjiFlYunjF5jGeMI8EPhKufy8nMMxxargpSz/exec";
+
+const PHOTOS = [["engaged",1058,1600],["p001",1200,1800],["p003",1200,1800],["p006",1800,1200],["p007",1200,1800],["p011",1800,1200],["p013",1200,1800],["p023",1200,1800],["p024",1800,1200],["p027",1200,1800],["p029",1800,1200],["p030",1800,1200],["p033",1800,1200],["p036",1800,1200],["p042",1800,1200],["p050",1200,1800],["p051",1200,1800],["p052",1200,1800],["p056",1200,1800],["p057",1200,1800],["p064",1200,1800],["p067",1200,1800],["p069",1200,1800],["p074",1200,1800],["p075",1200,1800],["p086",1800,1200],["p089",1200,1800],["p094",1800,1200],["p098",1200,1800],["p099",1200,1800],["p101",1200,1800],["p104",1800,1200],["p110",1800,1200],["p111",1200,1800],["p113",1800,1200],["p114",1800,1200],["p135",1200,1800],["p140",1200,1800],["p146",1200,1800],["p150",1800,1200],["p152",1800,1200],["film-1ae49048",1260,1800],["film-1b22fbab",1800,1200],["film-1c2f546c",1800,1260],["film-1e82bbaa",1260,1800],["film-1f4045bc",1800,1260],["film-60f683ca",1260,1800],["film-74469468",1800,1260],["film-9738de42",1800,1260],["film-9eb7fe4a",1260,1800],["film-b7f3128e",1800,1260],["film-d7e29958",1800,1260],["film-f2dec468",1800,1200]];
+const TAGS = {
+  film:["film-"],
+  veil:["p086","p089","p094","p098","p099","p101","p104","p110","p150","p152","film-9738de42","film-f2dec468","film-1b22fbab"],
+  barong:["p001","p003","p006","p007","p011","p013","p023","p024","p027","p029","p030","p033","p036","p042","p050","p051","p052","p056","p057","p064","p067","p069","p074","p075"]
+};
+const tagOf = n => n==="engaged" ? "engaged" : n.startsWith("film-") ? "film" : TAGS.veil.includes(n) ? "veil" : TAGS.barong.includes(n) ? "barong" : "film";
+/* casual digital (p111–p146) belong with the film-era city set */
+
+// ----- gallery
+const mas = document.getElementById("masonry");
+PHOTOS.forEach(([n,w,h],i)=>{
+  const b=document.createElement("button");
+  b.className="tile"; b.dataset.p=n; b.dataset.tag=tagOf(n);
+  b.setAttribute("aria-label",`Open photo ${i+1} of ${PHOTOS.length}`);
+  b.innerHTML=`<img src="thumbs/${n}.jpg" width="${w}" height="${h}" alt="GD and Sophie, prenup photo ${i+1}" loading="lazy"><span>▸ ${String(i+1).padStart(2,"0")}</span>`;
+  mas.appendChild(b);
+});
+document.querySelectorAll(".chip").forEach(c=>c.addEventListener("click",()=>{
+  document.querySelectorAll(".chip").forEach(x=>x.setAttribute("aria-pressed",x===c));
+  let k=0; const f=c.dataset.f;
+  mas.querySelectorAll(".tile").forEach(t=>{const on=f==="all"||t.dataset.tag===f; t.hidden=!on; if(on)k++;});
+  document.getElementById("gcount").textContent=k;
+}));
+
+// ----- lightbox (any element with data-p opens it)
+const lb=document.getElementById("lb"), lbImg=document.getElementById("lbImg"), lbCount=document.getElementById("lbCount");
+const order=PHOTOS.map(p=>p[0]); let cur=0, lastFocus=null;
+function show(i){cur=(i+order.length)%order.length; lbImg.src=`photos/${order[cur]}.jpg`; lbImg.alt=`GD and Sophie, photo ${cur+1}`; lbCount.textContent=`${cur+1} / ${order.length}`;}
+function openLb(n){lastFocus=document.activeElement; show(Math.max(0,order.indexOf(n))); lb.hidden=false; document.body.style.overflow="hidden"; document.getElementById("lbClose").focus();}
+function closeLb(){lb.hidden=true; document.body.style.overflow=""; lastFocus&&lastFocus.focus();}
+document.addEventListener("click",e=>{const t=e.target.closest("[data-p]"); if(t&&!lb.contains(t)&&!stripDragged) openLb(t.dataset.p);});
+document.getElementById("lbClose").onclick=closeLb;
+document.getElementById("lbPrev").onclick=()=>show(cur-1);
+document.getElementById("lbNext").onclick=()=>show(cur+1);
+lb.addEventListener("click",e=>{if(e.target===lb)closeLb();});
+document.addEventListener("keydown",e=>{if(lb.hidden)return; if(e.key==="Escape")closeLb(); if(e.key==="ArrowLeft")show(cur-1); if(e.key==="ArrowRight")show(cur+1);});
+let tx=0; lb.addEventListener("touchstart",e=>tx=e.touches[0].clientX,{passive:true});
+lb.addEventListener("touchend",e=>{const d=e.changedTouches[0].clientX-tx; if(Math.abs(d)>50) show(cur+(d<0?1:-1));});
+
+// ----- film strip drag
+const strip=document.getElementById("strip"); let down=false,sx=0,sl=0,stripDragged=false;
+strip.addEventListener("pointerdown",e=>{if(e.pointerType!=="mouse")return; down=true;stripDragged=false;sx=e.clientX;sl=strip.scrollLeft;strip.style.scrollSnapType="none";});
+window.addEventListener("pointermove",e=>{if(!down)return; const d=e.clientX-sx; if(Math.abs(d)>5)stripDragged=true; strip.scrollLeft=sl-d;});
+window.addEventListener("pointerup",()=>{if(!down)return; down=false; strip.style.scrollSnapType=""; setTimeout(()=>stripDragged=false,50);});
+
+// ----- countdown to 26 Dec 2026, 2:00 PM Manila
+const target=new Date("2026-12-26T14:00:00+08:00").getTime();
+const pad=n=>String(n).padStart(2,"0");
+function tick(){let s=Math.max(0,Math.floor((target-Date.now())/1000));
+  const d=Math.floor(s/86400); s%=86400; const h=Math.floor(s/3600); s%=3600; const m=Math.floor(s/60); s%=60;
+  document.getElementById("cd-d").textContent=d; document.getElementById("cd-h").textContent=pad(h);
+  document.getElementById("cd-m").textContent=pad(m); document.getElementById("cd-s").textContent=pad(s);}
+tick(); setInterval(tick,1000);
+
+// ----- hero sound seal
+const hv=document.getElementById("heroVideo"), sealLabel=document.getElementById("sealLabel");
+document.getElementById("seal").addEventListener("click",()=>{
+  if(hv.muted){hv.muted=false; hv.currentTime=0; hv.play().catch(()=>{}); sealLabel.textContent="SOUND ON"; document.getElementById("seal").setAttribute("aria-label","Mute the film");}
+  else{hv.muted=true; sealLabel.textContent="PLAY ▶"; document.getElementById("seal").setAttribute("aria-label","Play our film with sound");}
+});
+document.getElementById("filmVideo").addEventListener("play",()=>{hv.muted=true; sealLabel.textContent="PLAY ▶";});
+
+// ----- nav background + parallax
+const nav=document.getElementById("nav");
+const reduce=matchMedia("(prefers-reduced-motion: reduce)").matches;
+const prints=[...document.querySelectorAll(".print")], par=[...document.querySelectorAll("[data-parallax]")];
+function onScroll(){
+  nav.classList.toggle("solid",scrollY>innerHeight*.5);
+  if(reduce)return;
+  const vh=innerHeight;
+  prints.forEach((p,i)=>{const r=p.getBoundingClientRect(); if(r.bottom<-200||r.top>vh+200)return; const c=(r.top+r.height/2-vh/2)/vh; p.style.setProperty("--py",(c*(i%2?-26:20)).toFixed(1)+"px");});
+  par.forEach(p=>{const r=p.parentElement.getBoundingClientRect(); if(r.bottom<0||r.top>vh)return; const c=Math.max(-1,Math.min(1,(r.top+r.height/2-vh/2)/vh)); p.style.setProperty("--py",(c*-50).toFixed(1)+"px");});
+}
+addEventListener("scroll",onScroll,{passive:true}); onScroll();
+
+// ----- RSVP
+const RSVP_CLOSES=new Date("2026-11-30T22:00:00+08:00").getTime();
+if(Date.now()>RSVP_CLOSES){document.getElementById("rsvpForm").hidden=true; document.getElementById("closed").hidden=false;}
+const form=document.getElementById("rsvpForm"), idbox=document.getElementById("idbox"), err=document.getElementById("err");
+const plusCount=document.getElementById("f-pluscount"), plusList=document.getElementById("plusList"), plusConfirmWrap=document.getElementById("plusConfirmWrap");
+const ID_OPTIONS='<option value="">Choose an ID</option><option>PhilSys National ID</option><option>Driver’s License</option><option>Passport</option><option>UMID / SSS</option><option>PRC ID</option><option>Postal ID</option><option>Voter’s ID</option><option>Other government ID</option>';
+function renderPlus(){
+  const n=+plusCount.value, keep=[...plusList.querySelectorAll(".guest")].map(g=>({
+    name:g.querySelector("[data-k=name]").value,type:g.querySelector("[data-k=type]").value,no:g.querySelector("[data-k=no]").value,kid:g.querySelector("[data-k=kid]").checked}));
+  plusConfirmWrap.hidden=n===0; plusList.innerHTML="";
+  for(let i=0;i<n;i++){
+    const k=keep[i]||{name:"",type:"",no:"",kid:false}, g=document.createElement("div"); g.className="guest";
+    g.innerHTML=`<p class="guest-h">Plus-one ${i+1}</p>
+      <div class="fields">
+        <div class="field full"><label for="pg${i}-name">Full name, as on their ID</label><input id="pg${i}-name" data-k="name" autocomplete="off"></div>
+        <div class="field"><label for="pg${i}-type">Government ID</label><select id="pg${i}-type" data-k="type">${ID_OPTIONS}</select></div>
+        <div class="field"><label for="pg${i}-no">ID number</label><input id="pg${i}-no" data-k="no" autocomplete="off"></div>
+      </div>
+      <label class="check"><input type="checkbox" id="pg${i}-kid" data-k="kid"> This is a toddler or child with no ID yet</label>
+      <p class="kidnote" hidden>No ID needed here. Please message GD &amp; Sophie so we can let the Navy gate know.</p>`;
+    plusList.appendChild(g);
+    g.querySelector("[data-k=name]").value=k.name; g.querySelector("[data-k=type]").value=k.type; g.querySelector("[data-k=no]").value=k.no;
+    const kid=g.querySelector("[data-k=kid]"); kid.checked=k.kid;
+    const sync=()=>{g.querySelector(".kidnote").hidden=!kid.checked; g.querySelectorAll("[data-k=type],[data-k=no]").forEach(x=>{x.disabled=kid.checked; x.closest(".field").style.opacity=kid.checked?.4:1;});};
+    kid.addEventListener("change",sync); sync();
+  }
+}
+plusCount.addEventListener("change",renderPlus);
+form.querySelectorAll('input[name="attending"]').forEach(r=>r.addEventListener("change",()=>{
+  const yes=form.attending.value==="yes"; idbox.hidden=!yes; document.getElementById("dietWrap").hidden=!yes;
+}));
+form.addEventListener("submit",async e=>{
+  e.preventDefault(); err.hidden=true;
+  const fd=Object.fromEntries(new FormData(form).entries()); const yes=fd.attending==="yes";
+  const need=[["name","your full name"],["mobile","your mobile number"]];
+  if(yes){need.push(["idType","your ID type"],["idNumber","your ID number"]);
+    }
+  const plusOnes=yes?[...plusList.querySelectorAll(".guest")].map((g,i)=>({n:i+1,name:g.querySelector("[data-k=name]").value.trim(),idType:g.querySelector("[data-k=type]").value,idNumber:g.querySelector("[data-k=no]").value.trim(),childNoId:g.querySelector("[data-k=kid]").checked})):[];
+  plusOnes.forEach(p=>{need.push(["_p"+p.n+"n","plus-one "+p.n+"’s full name"]); fd["_p"+p.n+"n"]=p.name;
+    if(!p.childNoId){need.push(["_p"+p.n+"t","plus-one "+p.n+"’s ID type"],["_p"+p.n+"i","plus-one "+p.n+"’s ID number"]); fd["_p"+p.n+"t"]=p.idType; fd["_p"+p.n+"i"]=p.idNumber;}});
+  const miss=need.filter(([k])=>!(fd[k]||"").trim()).map(([,l])=>l);
+  Object.keys(fd).filter(k=>k.startsWith("_p")).forEach(k=>delete fd[k]);
+  if(miss.length){err.textContent="Please add "+miss.join(", ")+"."; err.hidden=false; return;}
+  if(plusOnes.length&&!document.getElementById("f-plusconfirm").checked){err.textContent="Please confirm your plus-one(s) with GD & Sophie first, then tick the box."; err.hidden=false; return;}
+  fd.plusOneCount=yes?plusOnes.length:0; fd.plusOnes=JSON.stringify(plusOnes); fd.childrenWithoutId=plusOnes.filter(p=>p.childNoId).map(p=>p.name).join(", ");
+  if(yes&&!document.getElementById("f-consent").checked){err.textContent="Please tick the box to let us share your ID with the Navy gate. They won’t let anyone in without it."; err.hidden=false; return;}
+  fd.submittedAt=new Date().toISOString();
+  const btn=document.getElementById("submitBtn"); btn.disabled=true; btn.textContent="Sending…";
+  let saved=false;
+  if(RSVP_ENDPOINT){
+    try{await fetch(RSVP_ENDPOINT,{method:"POST",mode:"no-cors",headers:{"Content-Type":"text/plain;charset=utf-8"},body:JSON.stringify(fd)}); saved=true;}
+    catch(_){btn.disabled=false; btn.textContent="Send my reply"; err.textContent="We couldn’t send your reply. Check your connection and try again."; err.hidden=false; return;}
+  }
+  form.hidden=true; document.getElementById("thanks").hidden=false;
+  if(!yes){document.getElementById("thanksTitle").textContent="We’ll miss you"; document.getElementById("thanksText").textContent="Thank you for letting us know. You’ll be in our hearts on the 26th.";}
+  if(yes&&fd.childrenWithoutId){document.getElementById("thanksText").textContent="Your reply is in. Since "+fd.childrenWithoutId+" has no ID yet, please send GD & Sophie a quick message so we can tell the Navy gate.";}
+  document.getElementById("previewNote").hidden=saved;
+});
+</script>
+
+</body>
+</html>
