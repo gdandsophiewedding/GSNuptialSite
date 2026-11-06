@@ -952,16 +952,15 @@ footer .big span{font-family:var(--script)}
             <div class="field full"><span class="legend">Photo of your ID (front)</span><label class="upload" for="f-idphoto"><input type="file" id="f-idphoto" accept="image/*"><span class="up-btn">Choose photo</span><span class="up-name">No photo yet</span><img class="up-thumb" alt="" hidden></label></div>
           </div>
           <div class="plusbox">
-            <div class="field"><label for="f-pluscount">How many plus-ones?</label>
+            <div class="field"><label for="f-pluscount">Bringing a plus-one?</label>
               <select id="f-pluscount" name="plusOneCount">
-                <option value="0">None, just me</option><option value="1">1 plus-one</option><option value="2">2 plus-ones</option>
-                <option value="3">3 plus-ones</option><option value="4">4 plus-ones</option><option value="5">5 plus-ones</option>
+                <option value="0">No, just me</option><option value="1">Yes, 1 plus-one</option>
               </select></div>
-            <p class="plusnote"><b>Please confirm with GD &amp; Sophie first</b> before adding a plus-one. Seats at the Navy clubhouse are limited and every name goes on the gate list.</p>
-            <label class="check" id="plusConfirmWrap" hidden><input type="checkbox" id="f-plusconfirm"> GD &amp; Sophie have confirmed my plus-one(s).</label>
+            <p class="plusnote">Each invitation allows <b>1 plus-one at most</b>. <b>Please confirm with GD &amp; Sophie first</b> before adding them. Seats at the Navy clubhouse are limited and every name goes on the gate list.</p>
+            <label class="check" id="plusConfirmWrap" hidden><input type="checkbox" id="f-plusconfirm"> GD &amp; Sophie have confirmed my plus-one.</label>
             <div id="plusList" class="pluslist"></div>
           </div>
-          <label class="check"><input type="checkbox" id="f-consent" name="consent"> I agree to share my ID details (and my plus-ones’) with the Philippine Navy for gate clearance on 26 December 2026.</label>
+          <label class="check"><input type="checkbox" id="f-consent" name="consent"> I agree to share my ID details (and my plus-one’s) with the Philippine Navy for gate clearance on 26 December 2026.</label>
         </div>
 
         <div class="fields">
@@ -1190,12 +1189,12 @@ function bindUpload(label){
 }
 bindUpload(document.querySelector('label[for="f-idphoto"]'));
 function renderPlus(){
-  const n=+plusCount.value; plusConfirmWrap.hidden=n===0;
+  const n=Math.min(1,Math.max(0,+plusCount.value||0)); plusConfirmWrap.hidden=n===0;
   let have=plusList.querySelectorAll(".guest").length;
   while(have>n){plusList.lastElementChild.remove(); have--;}
   for(let i=have;i<n;i++){
     const g=document.createElement("div"); g.className="guest";
-    g.innerHTML=`<p class="guest-h">Plus-one ${i+1}</p>
+    g.innerHTML=`<p class="guest-h">Your plus-one</p>
       <div class="fields">
         <div class="field full"><label for="pg${i}-name">Full name, as on their ID</label><input id="pg${i}-name" data-k="name" autocomplete="off"></div>
         <div class="field"><label for="pg${i}-type">Government ID</label><select id="pg${i}-type" data-k="type">${ID_OPTIONS}</select></div>
@@ -1233,7 +1232,7 @@ form.addEventListener("submit",async e=>{
   const miss=need.filter(([k])=>!(fd[k]||"").trim()).map(([,l])=>l);
   Object.keys(fd).filter(k=>k.startsWith("_p")).forEach(k=>delete fd[k]); delete fd._photo;
   if(miss.length){err.textContent="Please add "+miss.join(", ")+"."; err.hidden=false; return;}
-  if(plusOnes.length&&!document.getElementById("f-plusconfirm").checked){err.textContent="Please confirm your plus-one(s) with GD & Sophie first, then tick the box."; err.hidden=false; return;}
+  if(plusOnes.length&&!document.getElementById("f-plusconfirm").checked){err.textContent="Please confirm your plus-one with GD & Sophie first, then tick the box."; err.hidden=false; return;}
   const btn=document.getElementById("submitBtn");
   if(yes){ btn.disabled=true; btn.textContent="Preparing photos…";
     try{ fd.idPhoto=await shrink(mainFile);
